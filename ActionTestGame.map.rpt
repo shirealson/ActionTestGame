@@ -1,0 +1,550 @@
+Analysis & Synthesis report for ActionTestGame
+Sat Nov 03 13:01:39 2018
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |ActionTestGame|tube_display:p4|current_state1
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: game_core:p1|lpm_divide:Div0
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Nov 03 13:01:39 2018    ;
+; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name               ; ActionTestGame                           ;
+; Top-level Entity Name       ; ActionTestGame                           ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 884                                      ;
+; Total pins                  ; 49                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                          ; ActionTestGame     ; ActionTestGame     ;
+; Family name                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
+; div_10hz.vhd                     ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/div_10hz.vhd                                ;
+; dot_display.vhd                  ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/dot_display.vhd                             ;
+; tube_display.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/tube_display.vhd                            ;
+; state_core.vhd                   ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/state_core.vhd                              ;
+; ActionTestGame.vhd               ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/ActionTestGame.vhd                          ;
+; random_direction.vhd             ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/random_direction.vhd                        ;
+; game_core.vhd                    ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/game_core.vhd                               ;
+; buttton_scan.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/buttton_scan.vhd                            ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/lpm_divide.tdf      ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/abs_divider.inc     ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/sign_div_unsign.inc ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/aglobal90.inc       ;
+; db/lpm_divide_61m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/lpm_divide_61m.tdf                       ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/sign_div_unsign_nlh.tdf                  ;
+; db/alt_u_div_9le.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/alt_u_div_9le.tdf                        ;
+; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_e7c.tdf                          ;
+; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_f7c.tdf                          ;
+; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_g7c.tdf                          ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Total logic elements                        ; 884      ;
+;     -- Combinational with no register       ; 592      ;
+;     -- Register only                        ; 57       ;
+;     -- Combinational with a register        ; 235      ;
+;                                             ;          ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 318      ;
+;     -- 3 input functions                    ; 193      ;
+;     -- 2 input functions                    ; 259      ;
+;     -- 1 input functions                    ; 57       ;
+;     -- 0 input functions                    ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 650      ;
+;     -- arithmetic mode                      ; 234      ;
+;     -- qfbk mode                            ; 0        ;
+;     -- register cascade mode                ; 0        ;
+;     -- synchronous clear/load mode          ; 112      ;
+;     -- asynchronous clear/load mode         ; 26       ;
+;                                             ;          ;
+; Total registers                             ; 292      ;
+; Total logic cells in carry chains           ; 283      ;
+; I/O pins                                    ; 49       ;
+; Maximum fan-out node                        ; main_clk ;
+; Maximum fan-out                             ; 132      ;
+; Total fan-out                               ; 3171     ;
+; Average fan-out                             ; 3.40     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                  ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                 ; Library Name ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |ActionTestGame                            ; 884 (0)     ; 292          ; 0          ; 49   ; 0            ; 592 (0)      ; 57 (0)            ; 235 (0)          ; 283 (0)         ; 0 (0)      ; |ActionTestGame                                                                                                                                     ; work         ;
+;    |button_scan:p6|                        ; 110 (110)   ; 60           ; 0          ; 0    ; 0            ; 50 (50)      ; 14 (14)           ; 46 (46)          ; 51 (51)         ; 0 (0)      ; |ActionTestGame|button_scan:p6                                                                                                                      ; work         ;
+;    |div_10hz:p7|                           ; 57 (57)     ; 25           ; 0          ; 0    ; 0            ; 32 (32)      ; 11 (11)           ; 14 (14)          ; 24 (24)         ; 0 (0)      ; |ActionTestGame|div_10hz:p7                                                                                                                         ; work         ;
+;    |dot_display:p3|                        ; 106 (106)   ; 6            ; 0          ; 0    ; 0            ; 100 (100)    ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|dot_display:p3                                                                                                                      ; work         ;
+;    |game_core:p1|                          ; 340 (242)   ; 85           ; 0          ; 0    ; 0            ; 255 (157)    ; 1 (1)             ; 84 (84)          ; 119 (59)        ; 0 (0)      ; |ActionTestGame|game_core:p1                                                                                                                        ; work         ;
+;       |lpm_divide:Div0|                    ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0                                                                                                        ; work         ;
+;          |lpm_divide_61m:auto_generated|   ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated                                                                          ; work         ;
+;             |sign_div_unsign_nlh:divider|  ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider                                              ; work         ;
+;                |alt_u_div_9le:divider|     ; 98 (38)     ; 0            ; 0          ; 0    ; 0            ; 98 (38)      ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider                        ; work         ;
+;                   |add_sub_g7c:add_sub_10| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_10 ; work         ;
+;                   |add_sub_g7c:add_sub_11| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_11 ; work         ;
+;                   |add_sub_g7c:add_sub_12| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_12 ; work         ;
+;                   |add_sub_g7c:add_sub_13| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_13 ; work         ;
+;                   |add_sub_g7c:add_sub_2|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2  ; work         ;
+;                   |add_sub_g7c:add_sub_3|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_3  ; work         ;
+;                   |add_sub_g7c:add_sub_4|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_4  ; work         ;
+;                   |add_sub_g7c:add_sub_5|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_5  ; work         ;
+;                   |add_sub_g7c:add_sub_6|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_6  ; work         ;
+;                   |add_sub_g7c:add_sub_7|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_7  ; work         ;
+;                   |add_sub_g7c:add_sub_8|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_8  ; work         ;
+;                   |add_sub_g7c:add_sub_9|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_9  ; work         ;
+;    |random_direction:p5|                   ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|random_direction:p5                                                                                                                 ; work         ;
+;    |state_core:p2|                         ; 37 (37)     ; 19           ; 0          ; 0    ; 0            ; 18 (18)      ; 4 (4)             ; 15 (15)          ; 13 (13)         ; 0 (0)      ; |ActionTestGame|state_core:p2                                                                                                                       ; work         ;
+;    |tube_display:p4|                       ; 233 (233)   ; 96           ; 0          ; 0    ; 0            ; 137 (137)    ; 26 (26)           ; 70 (70)          ; 76 (76)         ; 0 (0)      ; |ActionTestGame|tube_display:p4                                                                                                                     ; work         ;
++--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |ActionTestGame|tube_display:p4|current_state1                    ;
++--------------------+--------------------+--------------------+--------------------+
+; Name               ; current_state1.st2 ; current_state1.st0 ; current_state1.st1 ;
++--------------------+--------------------+--------------------+--------------------+
+; current_state1.st1 ; 0                  ; 0                  ; 0                  ;
+; current_state1.st0 ; 0                  ; 1                  ; 1                  ;
+; current_state1.st2 ; 1                  ; 0                  ; 1                  ;
++--------------------+--------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; dot_display:p3|tempR[0]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[1]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[2]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[3]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[4]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[5]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[6]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempR[7]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[0]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[1]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[2]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[3]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[4]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[5]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[6]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; dot_display:p3|tempC[7]                             ; dot_display:p3|tempR[7]~33 ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; tube_display:p4|score_sec[0..2]        ; Lost fanout                                 ;
+; dot_display:p3|i[2]                    ; Merged with tube_display:p4|i[2]            ;
+; dot_display:p3|i[1]                    ; Merged with tube_display:p4|i[1]            ;
+; dot_display:p3|i[0]                    ; Merged with tube_display:p4|i[0]            ;
+; dot_display:p3|score_state             ; Merged with tube_display:p4|score_state     ;
+; dot_display:p3|game_sec[0]             ; Merged with tube_display:p4|game_sec[0]     ;
+; dot_display:p3|game_sec[1]             ; Merged with tube_display:p4|game_sec[1]     ;
+; dot_display:p3|game_sec[2]             ; Merged with tube_display:p4|game_sec[2]     ;
+; dot_display:p3|game_sec[3]             ; Merged with tube_display:p4|game_sec[3]     ;
+; dot_display:p3|game_sec[4]             ; Merged with tube_display:p4|game_sec[4]     ;
+; dot_display:p3|game_sec[5]             ; Merged with tube_display:p4|game_sec[5]     ;
+; dot_display:p3|game_sec[6]             ; Merged with tube_display:p4|game_sec[6]     ;
+; dot_display:p3|game_sec[7]             ; Merged with tube_display:p4|game_sec[7]     ;
+; dot_display:p3|j[0]                    ; Merged with tube_display:p4|j[0]            ;
+; dot_display:p3|j[1]                    ; Merged with tube_display:p4|j[1]            ;
+; dot_display:p3|j[2]                    ; Merged with tube_display:p4|j[2]            ;
+; dot_display:p3|j[3]                    ; Merged with tube_display:p4|j[3]            ;
+; dot_display:p3|j[4]                    ; Merged with tube_display:p4|j[4]            ;
+; dot_display:p3|j[5]                    ; Merged with tube_display:p4|j[5]            ;
+; random_direction:p5|temp_num[0]        ; Merged with tube_display:p4|i[0]            ;
+; button_scan:p6|clk3[0]                 ; Merged with tube_display:p4|i[0]            ;
+; button_scan:p6|clk1[0]                 ; Merged with tube_display:p4|i[0]            ;
+; div_10hz:p7|tmp2[0]                    ; Merged with div_10hz:p7|tmp[0]              ;
+; button_scan:p6|clk1[1]                 ; Merged with random_direction:p5|temp_num[1] ;
+; div_10hz:p7|tmp2[1]                    ; Merged with div_10hz:p7|tmp[1]              ;
+; dot_display:p3|state1_state            ; Merged with tube_display:p4|state1_state    ;
+; Total Number of Removed Registers = 28 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 292   ;
+; Number of registers using Synchronous Clear  ; 98    ;
+; Number of registers using Synchronous Load   ; 14    ;
+; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 207   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d1[0]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|game_sec[6]       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|j[2]              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY1:count1[4]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY2:count1[0]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY3:count1[2]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY4:count1[3]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d2[2]             ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score1[9]            ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score3[1]            ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score2[10]           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d3[2]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|state1_state      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|d4[3]             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|state_core:p2|nx_state[2]         ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|reg[11]           ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|direction[3]         ;
+; 9:1                ; 13 bits   ; 78 LEs        ; 13 LEs               ; 65 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|timer[9]             ;
+; 10:1               ; 13 bits   ; 78 LEs        ; 39 LEs               ; 39 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|tube_number[12]      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempR[1]~15        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[1]~45        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[2]~49        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ActionTestGame|tube_display:p4|current_state1~16 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempR[3]~19        ;
+; 13:1               ; 7 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |ActionTestGame|tube_display:p4|output_tube[6]    ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[3]~53        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: game_core:p1|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTHN             ; 15             ; Untyped                             ;
+; LPM_WIDTHD             ; 2              ; Untyped                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                             ;
+; CBXI_PARAMETER         ; lpm_divide_61m ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sat Nov 03 13:01:34 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ActionTestGame -c ActionTestGame
+Info: Found 2 design units, including 1 entities, in source file score_recorder.vhd
+    Info: Found design unit 1: score_recorder-D
+    Info: Found entity 1: score_recorder
+Info: Found 2 design units, including 1 entities, in source file div_10hz.vhd
+    Info: Found design unit 1: div_10hz-a
+    Info: Found entity 1: div_10hz
+Info: Found 2 design units, including 1 entities, in source file dot_display.vhd
+    Info: Found design unit 1: dot_display-a
+    Info: Found entity 1: dot_display
+Info: Found 2 design units, including 1 entities, in source file tube_display.vhd
+    Info: Found design unit 1: tube_display-a
+    Info: Found entity 1: tube_display
+Info: Found 2 design units, including 1 entities, in source file state_core.vhd
+    Info: Found design unit 1: state_core-a
+    Info: Found entity 1: state_core
+Warning: Can't analyze file -- file F:/文档/Quartus II/my id/ActionTestGame.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file ActionTestGame.vhd
+    Info: Found design unit 1: ActionTestGame-a
+    Info: Found entity 1: ActionTestGame
+Info: Found 2 design units, including 1 entities, in source file random_direction.vhd
+    Info: Found design unit 1: random_direction-a
+    Info: Found entity 1: random_direction
+Info: Found 2 design units, including 1 entities, in source file game_core.vhd
+    Info: Found design unit 1: game_core-a
+    Info: Found entity 1: game_core
+Info: Found 2 design units, including 1 entities, in source file buttton_scan.vhd
+    Info: Found design unit 1: button_scan-a
+    Info: Found entity 1: button_scan
+Info: Found 2 design units, including 1 entities, in source file beep.vhd
+    Info: Found design unit 1: beep-a
+    Info: Found entity 1: beep
+Info: Elaborating entity "ActionTestGame" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at ActionTestGame.vhd(9): used explicit default value for signal "main_keyborad_col" because signal was never assigned a value
+Info: Elaborating entity "game_core" for hierarchy "game_core:p1"
+Info: Elaborating entity "state_core" for hierarchy "state_core:p2"
+Info: Elaborating entity "dot_display" for hierarchy "dot_display:p3"
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(131): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(143): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(162): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(174): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(186): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(198): signal "direction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(199): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(210): signal "direction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(211): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(222): signal "direction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(223): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(234): signal "direction" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(235): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(249): signal "score_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(250): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at dot_display.vhd(262): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at dot_display.vhd(110): inferring latch(es) for signal or variable "tempC", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at dot_display.vhd(110): inferring latch(es) for signal or variable "tempR", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "tempR[0]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[1]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[2]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[3]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[4]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[5]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[6]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempR[7]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[0]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[1]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[2]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[3]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[4]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[5]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[6]" at dot_display.vhd(110)
+Info (10041): Inferred latch for "tempC[7]" at dot_display.vhd(110)
+Info: Elaborating entity "tube_display" for hierarchy "tube_display:p4"
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(204): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(216): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(232): signal "game_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(233): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(245): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(246): signal "tube1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(247): signal "tube2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(248): signal "tube3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(249): signal "tube4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(261): signal "score_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(262): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(274): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(275): signal "tube1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(276): signal "tube2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(277): signal "tube3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(278): signal "tube4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at tube_display.vhd(287): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "random_direction" for hierarchy "random_direction:p5"
+Info: Elaborating entity "button_scan" for hierarchy "button_scan:p6"
+Info: Elaborating entity "div_10hz" for hierarchy "div_10hz:p7"
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_core:p1|Div0"
+Info: Elaborated megafunction instantiation "game_core:p1|lpm_divide:Div0"
+Info: Instantiated megafunction "game_core:p1|lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "15"
+    Info: Parameter "LPM_WIDTHD" = "2"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_61m.tdf
+    Info: Found entity 1: lpm_divide_61m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info: Found entity 1: sign_div_unsign_nlh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_9le.tdf
+    Info: Found entity 1: alt_u_div_9le
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_e7c.tdf
+    Info: Found entity 1: add_sub_e7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_f7c.tdf
+    Info: Found entity 1: add_sub_f7c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_g7c.tdf
+    Info: Found entity 1: add_sub_g7c
+Warning: Latch dot_display:p3|tempR[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempR[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Latch dot_display:p3|tempC[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "main_keyborad_col[0]" is stuck at VCC
+    Warning (13410): Pin "main_keyborad_col[1]" is stuck at VCC
+    Warning (13410): Pin "main_keyborad_col[2]" is stuck at VCC
+    Warning (13410): Pin "main_keyborad_col[3]" is stuck at GND
+Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
+    Info: Register "tube_display:p4|score_sec[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "tube_display:p4|score_sec[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "tube_display:p4|score_sec[2]" lost all its fanouts during netlist optimizations.
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "main_kbrow0"
+Info: Implemented 933 device resources after synthesis - the final resource count might be different
+    Info: Implemented 8 input pins
+    Info: Implemented 41 output pins
+    Info: Implemented 884 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 271 megabytes
+    Info: Processing ended: Sat Nov 03 13:01:39 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

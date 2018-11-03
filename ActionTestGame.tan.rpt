@@ -1,0 +1,1011 @@
+Classic Timing Analyzer report for ActionTestGame
+Sat Nov 03 13:01:48 2018
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'main_clk'
+  7. Clock Hold: 'main_clk'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                   ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-----------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                    ; To                          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-----------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 2.159 ns                         ; main_reset              ; div_10hz:p7|clktmp1         ; --         ; main_clk ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 22.011 ns                        ; dot_display:p3|tempR[2] ; main_outputR[2]             ; main_clk   ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 2.824 ns                         ; main_BTN0               ; state_core:p2|nx_state[0]   ; --         ; main_clk ; 0            ;
+; Clock Setup: 'main_clk'      ; N/A                                      ; None          ; 14.50 MHz ( period = 68.954 ns ) ; game_core:p1|score2[1]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; 0            ;
+; Clock Hold: 'main_clk'       ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; tube_display:p4|i[2]    ; dot_display:p3|tempR[2]     ; main_clk   ; main_clk ; 186          ;
+; Total number of failed paths ;                                          ;               ;                                  ;                         ;                             ;            ;          ; 186          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-----------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM1270T144C5      ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; main_clk        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'main_clk'                                                                                                                                                                                                                                           ;
++-----------------------------------------+-----------------------------------------------------+-------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                    ; To                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 14.50 MHz ( period = 68.954 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 68.245 ns               ;
+; N/A                                     ; 14.74 MHz ( period = 67.865 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 67.156 ns               ;
+; N/A                                     ; 14.75 MHz ( period = 67.807 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 67.098 ns               ;
+; N/A                                     ; 14.76 MHz ( period = 67.733 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 67.024 ns               ;
+; N/A                                     ; 14.83 MHz ( period = 67.445 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.736 ns               ;
+; N/A                                     ; 14.86 MHz ( period = 67.273 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.564 ns               ;
+; N/A                                     ; 14.87 MHz ( period = 67.229 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.520 ns               ;
+; N/A                                     ; 14.90 MHz ( period = 67.135 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.426 ns               ;
+; N/A                                     ; 14.90 MHz ( period = 67.134 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.425 ns               ;
+; N/A                                     ; 14.91 MHz ( period = 67.078 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.369 ns               ;
+; N/A                                     ; 14.96 MHz ( period = 66.860 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.151 ns               ;
+; N/A                                     ; 14.97 MHz ( period = 66.792 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.083 ns               ;
+; N/A                                     ; 14.97 MHz ( period = 66.782 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 66.073 ns               ;
+; N/A                                     ; 14.98 MHz ( period = 66.748 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 66.039 ns               ;
+; N/A                                     ; 15.00 MHz ( period = 66.687 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.978 ns               ;
+; N/A                                     ; 15.01 MHz ( period = 66.622 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.913 ns               ;
+; N/A                                     ; 15.03 MHz ( period = 66.535 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.826 ns               ;
+; N/A                                     ; 15.04 MHz ( period = 66.486 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.777 ns               ;
+; N/A                                     ; 15.08 MHz ( period = 66.320 ns )                    ; game_core:p1|score1[1]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.611 ns               ;
+; N/A                                     ; 15.14 MHz ( period = 66.066 ns )                    ; game_core:p1|score1[9]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.357 ns               ;
+; N/A                                     ; 15.18 MHz ( period = 65.886 ns )                    ; game_core:p1|score2[9]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.177 ns               ;
+; N/A                                     ; 15.19 MHz ( period = 65.816 ns )                    ; game_core:p1|score2[11] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.107 ns               ;
+; N/A                                     ; 15.20 MHz ( period = 65.806 ns )                    ; game_core:p1|score2[8]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 65.097 ns               ;
+; N/A                                     ; 15.23 MHz ( period = 65.659 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.950 ns               ;
+; N/A                                     ; 15.24 MHz ( period = 65.601 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.892 ns               ;
+; N/A                                     ; 15.25 MHz ( period = 65.593 ns )                    ; game_core:p1|score1[8]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 64.884 ns               ;
+; N/A                                     ; 15.25 MHz ( period = 65.575 ns )                    ; game_core:p1|score1[11] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 64.866 ns               ;
+; N/A                                     ; 15.26 MHz ( period = 65.527 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.818 ns               ;
+; N/A                                     ; 15.33 MHz ( period = 65.239 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.530 ns               ;
+; N/A                                     ; 15.37 MHz ( period = 65.067 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.358 ns               ;
+; N/A                                     ; 15.38 MHz ( period = 65.023 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.314 ns               ;
+; N/A                                     ; 15.40 MHz ( period = 64.929 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.220 ns               ;
+; N/A                                     ; 15.40 MHz ( period = 64.928 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.219 ns               ;
+; N/A                                     ; 15.41 MHz ( period = 64.872 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 64.163 ns               ;
+; N/A                                     ; 15.47 MHz ( period = 64.654 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.945 ns               ;
+; N/A                                     ; 15.48 MHz ( period = 64.586 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.877 ns               ;
+; N/A                                     ; 15.49 MHz ( period = 64.576 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.867 ns               ;
+; N/A                                     ; 15.51 MHz ( period = 64.481 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.772 ns               ;
+; N/A                                     ; 15.52 MHz ( period = 64.416 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.707 ns               ;
+; N/A                                     ; 15.55 MHz ( period = 64.329 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.620 ns               ;
+; N/A                                     ; 15.56 MHz ( period = 64.280 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.571 ns               ;
+; N/A                                     ; 15.60 MHz ( period = 64.114 ns )                    ; game_core:p1|score1[1]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.405 ns               ;
+; N/A                                     ; 15.62 MHz ( period = 64.031 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 63.322 ns               ;
+; N/A                                     ; 15.66 MHz ( period = 63.860 ns )                    ; game_core:p1|score1[9]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 63.151 ns               ;
+; N/A                                     ; 15.70 MHz ( period = 63.680 ns )                    ; game_core:p1|score2[9]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 62.971 ns               ;
+; N/A                                     ; 15.72 MHz ( period = 63.625 ns )                    ; game_core:p1|score3[1]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.916 ns               ;
+; N/A                                     ; 15.72 MHz ( period = 63.610 ns )                    ; game_core:p1|score2[11] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 62.901 ns               ;
+; N/A                                     ; 15.72 MHz ( period = 63.600 ns )                    ; game_core:p1|score2[8]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 62.891 ns               ;
+; N/A                                     ; 15.78 MHz ( period = 63.387 ns )                    ; game_core:p1|score1[8]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 62.678 ns               ;
+; N/A                                     ; 15.78 MHz ( period = 63.369 ns )                    ; game_core:p1|score1[11] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 62.660 ns               ;
+; N/A                                     ; 15.79 MHz ( period = 63.314 ns )                    ; game_core:p1|score1[12] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.605 ns               ;
+; N/A                                     ; 15.82 MHz ( period = 63.213 ns )                    ; game_core:p1|score2[12] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.504 ns               ;
+; N/A                                     ; 15.84 MHz ( period = 63.129 ns )                    ; game_core:p1|score3[0]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.420 ns               ;
+; N/A                                     ; 15.84 MHz ( period = 63.115 ns )                    ; game_core:p1|score3[10] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.406 ns               ;
+; N/A                                     ; 15.89 MHz ( period = 62.942 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 62.233 ns               ;
+; N/A                                     ; 15.90 MHz ( period = 62.884 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 62.175 ns               ;
+; N/A                                     ; 15.91 MHz ( period = 62.846 ns )                    ; game_core:p1|score3[11] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 62.137 ns               ;
+; N/A                                     ; 15.92 MHz ( period = 62.810 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 62.101 ns               ;
+; N/A                                     ; 15.99 MHz ( period = 62.554 ns )                    ; game_core:p1|score3[7]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.845 ns               ;
+; N/A                                     ; 15.99 MHz ( period = 62.537 ns )                    ; game_core:p1|score3[9]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.828 ns               ;
+; N/A                                     ; 15.99 MHz ( period = 62.522 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.813 ns               ;
+; N/A                                     ; 16.02 MHz ( period = 62.441 ns )                    ; game_core:p1|score3[8]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.732 ns               ;
+; N/A                                     ; 16.03 MHz ( period = 62.366 ns )                    ; game_core:p1|score3[2]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.657 ns               ;
+; N/A                                     ; 16.04 MHz ( period = 62.350 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.641 ns               ;
+; N/A                                     ; 16.05 MHz ( period = 62.306 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.597 ns               ;
+; N/A                                     ; 16.07 MHz ( period = 62.212 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.503 ns               ;
+; N/A                                     ; 16.07 MHz ( period = 62.211 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.502 ns               ;
+; N/A                                     ; 16.08 MHz ( period = 62.204 ns )                    ; game_core:p1|score3[5]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.495 ns               ;
+; N/A                                     ; 16.09 MHz ( period = 62.155 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.446 ns               ;
+; N/A                                     ; 16.14 MHz ( period = 61.939 ns )                    ; game_core:p1|score3[6]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.230 ns               ;
+; N/A                                     ; 16.15 MHz ( period = 61.937 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.228 ns               ;
+; N/A                                     ; 16.16 MHz ( period = 61.869 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.160 ns               ;
+; N/A                                     ; 16.17 MHz ( period = 61.859 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.150 ns               ;
+; N/A                                     ; 16.18 MHz ( period = 61.808 ns )                    ; game_core:p1|score3[3]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 61.099 ns               ;
+; N/A                                     ; 16.19 MHz ( period = 61.764 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 61.055 ns               ;
+; N/A                                     ; 16.21 MHz ( period = 61.699 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.990 ns               ;
+; N/A                                     ; 16.21 MHz ( period = 61.687 ns )                    ; game_core:p1|score3[4]  ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 60.978 ns               ;
+; N/A                                     ; 16.23 MHz ( period = 61.612 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.903 ns               ;
+; N/A                                     ; 16.24 MHz ( period = 61.563 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.854 ns               ;
+; N/A                                     ; 16.28 MHz ( period = 61.419 ns )                    ; game_core:p1|score3[1]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 60.710 ns               ;
+; N/A                                     ; 16.29 MHz ( period = 61.397 ns )                    ; game_core:p1|score1[1]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.688 ns               ;
+; N/A                                     ; 16.36 MHz ( period = 61.143 ns )                    ; game_core:p1|score1[9]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.434 ns               ;
+; N/A                                     ; 16.36 MHz ( period = 61.108 ns )                    ; game_core:p1|score1[12] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 60.399 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.007 ns )                    ; game_core:p1|score2[12] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 60.298 ns               ;
+; N/A                                     ; 16.40 MHz ( period = 60.963 ns )                    ; game_core:p1|score2[9]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.254 ns               ;
+; N/A                                     ; 16.41 MHz ( period = 60.923 ns )                    ; game_core:p1|score3[0]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 60.214 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.909 ns )                    ; game_core:p1|score3[10] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 60.200 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.904 ns )                    ; game_core:p1|score3[12] ; game_core:p1|tube_number[0] ; main_clk   ; main_clk ; None                        ; None                      ; 60.195 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.893 ns )                    ; game_core:p1|score2[11] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.184 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.883 ns )                    ; game_core:p1|score2[8]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 60.174 ns               ;
+; N/A                                     ; 16.48 MHz ( period = 60.670 ns )                    ; game_core:p1|score1[8]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 59.961 ns               ;
+; N/A                                     ; 16.49 MHz ( period = 60.652 ns )                    ; game_core:p1|score1[11] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 59.943 ns               ;
+; N/A                                     ; 16.49 MHz ( period = 60.640 ns )                    ; game_core:p1|score3[11] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.931 ns               ;
+; N/A                                     ; 16.56 MHz ( period = 60.398 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 59.689 ns               ;
+; N/A                                     ; 16.57 MHz ( period = 60.348 ns )                    ; game_core:p1|score3[7]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.639 ns               ;
+; N/A                                     ; 16.58 MHz ( period = 60.331 ns )                    ; game_core:p1|score3[9]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.622 ns               ;
+; N/A                                     ; 16.60 MHz ( period = 60.235 ns )                    ; game_core:p1|score3[8]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.526 ns               ;
+; N/A                                     ; 16.62 MHz ( period = 60.160 ns )                    ; game_core:p1|score3[2]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.451 ns               ;
+; N/A                                     ; 16.67 MHz ( period = 59.998 ns )                    ; game_core:p1|score3[5]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.289 ns               ;
+; N/A                                     ; 16.74 MHz ( period = 59.733 ns )                    ; game_core:p1|score3[6]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 59.024 ns               ;
+; N/A                                     ; 16.78 MHz ( period = 59.602 ns )                    ; game_core:p1|score3[3]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 58.893 ns               ;
+; N/A                                     ; 16.81 MHz ( period = 59.481 ns )                    ; game_core:p1|score3[4]  ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 58.772 ns               ;
+; N/A                                     ; 16.86 MHz ( period = 59.309 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.88 MHz ( period = 59.251 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 58.542 ns               ;
+; N/A                                     ; 16.90 MHz ( period = 59.177 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 58.468 ns               ;
+; N/A                                     ; 16.98 MHz ( period = 58.889 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 58.180 ns               ;
+; N/A                                     ; 17.03 MHz ( period = 58.717 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 58.008 ns               ;
+; N/A                                     ; 17.04 MHz ( period = 58.702 ns )                    ; game_core:p1|score3[1]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.993 ns               ;
+; N/A                                     ; 17.04 MHz ( period = 58.698 ns )                    ; game_core:p1|score3[12] ; game_core:p1|tube_number[1] ; main_clk   ; main_clk ; None                        ; None                      ; 57.989 ns               ;
+; N/A                                     ; 17.04 MHz ( period = 58.673 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.964 ns               ;
+; N/A                                     ; 17.07 MHz ( period = 58.579 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.870 ns               ;
+; N/A                                     ; 17.07 MHz ( period = 58.578 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.869 ns               ;
+; N/A                                     ; 17.09 MHz ( period = 58.522 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.813 ns               ;
+; N/A                                     ; 17.13 MHz ( period = 58.391 ns )                    ; game_core:p1|score1[12] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.682 ns               ;
+; N/A                                     ; 17.15 MHz ( period = 58.304 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.595 ns               ;
+; N/A                                     ; 17.16 MHz ( period = 58.290 ns )                    ; game_core:p1|score2[12] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.581 ns               ;
+; N/A                                     ; 17.17 MHz ( period = 58.236 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.527 ns               ;
+; N/A                                     ; 17.17 MHz ( period = 58.226 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.517 ns               ;
+; N/A                                     ; 17.18 MHz ( period = 58.206 ns )                    ; game_core:p1|score3[0]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.497 ns               ;
+; N/A                                     ; 17.18 MHz ( period = 58.192 ns )                    ; game_core:p1|score3[10] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.483 ns               ;
+; N/A                                     ; 17.20 MHz ( period = 58.131 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.422 ns               ;
+; N/A                                     ; 17.22 MHz ( period = 58.066 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.357 ns               ;
+; N/A                                     ; 17.25 MHz ( period = 57.979 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.270 ns               ;
+; N/A                                     ; 17.26 MHz ( period = 57.930 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.221 ns               ;
+; N/A                                     ; 17.26 MHz ( period = 57.923 ns )                    ; game_core:p1|score3[11] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 57.214 ns               ;
+; N/A                                     ; 17.31 MHz ( period = 57.764 ns )                    ; game_core:p1|score1[1]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 57.055 ns               ;
+; N/A                                     ; 17.35 MHz ( period = 57.631 ns )                    ; game_core:p1|score3[7]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.922 ns               ;
+; N/A                                     ; 17.36 MHz ( period = 57.614 ns )                    ; game_core:p1|score3[9]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.905 ns               ;
+; N/A                                     ; 17.39 MHz ( period = 57.518 ns )                    ; game_core:p1|score3[8]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.809 ns               ;
+; N/A                                     ; 17.39 MHz ( period = 57.510 ns )                    ; game_core:p1|score1[9]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.801 ns               ;
+; N/A                                     ; 17.41 MHz ( period = 57.443 ns )                    ; game_core:p1|score3[2]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.734 ns               ;
+; N/A                                     ; 17.44 MHz ( period = 57.330 ns )                    ; game_core:p1|score2[9]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.621 ns               ;
+; N/A                                     ; 17.46 MHz ( period = 57.281 ns )                    ; game_core:p1|score3[5]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.572 ns               ;
+; N/A                                     ; 17.46 MHz ( period = 57.260 ns )                    ; game_core:p1|score2[11] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.551 ns               ;
+; N/A                                     ; 17.47 MHz ( period = 57.250 ns )                    ; game_core:p1|score2[8]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.541 ns               ;
+; N/A                                     ; 17.53 MHz ( period = 57.037 ns )                    ; game_core:p1|score1[8]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.328 ns               ;
+; N/A                                     ; 17.54 MHz ( period = 57.019 ns )                    ; game_core:p1|score1[11] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 56.310 ns               ;
+; N/A                                     ; 17.54 MHz ( period = 57.016 ns )                    ; game_core:p1|score3[6]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.307 ns               ;
+; N/A                                     ; 17.58 MHz ( period = 56.885 ns )                    ; game_core:p1|score3[3]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.176 ns               ;
+; N/A                                     ; 17.62 MHz ( period = 56.764 ns )                    ; game_core:p1|score3[4]  ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 56.055 ns               ;
+; N/A                                     ; 17.86 MHz ( period = 55.981 ns )                    ; game_core:p1|score3[12] ; game_core:p1|tube_number[2] ; main_clk   ; main_clk ; None                        ; None                      ; 55.272 ns               ;
+; N/A                                     ; 18.16 MHz ( period = 55.069 ns )                    ; game_core:p1|score3[1]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 54.360 ns               ;
+; N/A                                     ; 18.26 MHz ( period = 54.758 ns )                    ; game_core:p1|score1[12] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 54.049 ns               ;
+; N/A                                     ; 18.30 MHz ( period = 54.657 ns )                    ; game_core:p1|score2[12] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.948 ns               ;
+; N/A                                     ; 18.32 MHz ( period = 54.573 ns )                    ; game_core:p1|score3[0]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.864 ns               ;
+; N/A                                     ; 18.33 MHz ( period = 54.559 ns )                    ; game_core:p1|score3[10] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.850 ns               ;
+; N/A                                     ; 18.42 MHz ( period = 54.290 ns )                    ; game_core:p1|score3[11] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.581 ns               ;
+; N/A                                     ; 18.52 MHz ( period = 53.998 ns )                    ; game_core:p1|score3[7]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.289 ns               ;
+; N/A                                     ; 18.53 MHz ( period = 53.981 ns )                    ; game_core:p1|score3[9]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.272 ns               ;
+; N/A                                     ; 18.56 MHz ( period = 53.885 ns )                    ; game_core:p1|score3[8]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.176 ns               ;
+; N/A                                     ; 18.58 MHz ( period = 53.810 ns )                    ; game_core:p1|score3[2]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 53.101 ns               ;
+; N/A                                     ; 18.61 MHz ( period = 53.742 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 53.033 ns               ;
+; N/A                                     ; 18.64 MHz ( period = 53.648 ns )                    ; game_core:p1|score3[5]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 52.939 ns               ;
+; N/A                                     ; 18.73 MHz ( period = 53.383 ns )                    ; game_core:p1|score3[6]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 52.674 ns               ;
+; N/A                                     ; 18.78 MHz ( period = 53.252 ns )                    ; game_core:p1|score3[3]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 52.543 ns               ;
+; N/A                                     ; 18.82 MHz ( period = 53.131 ns )                    ; game_core:p1|score3[4]  ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 52.422 ns               ;
+; N/A                                     ; 18.99 MHz ( period = 52.653 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.944 ns               ;
+; N/A                                     ; 19.01 MHz ( period = 52.595 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.886 ns               ;
+; N/A                                     ; 19.04 MHz ( period = 52.521 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.812 ns               ;
+; N/A                                     ; 19.10 MHz ( period = 52.348 ns )                    ; game_core:p1|score3[12] ; game_core:p1|tube_number[3] ; main_clk   ; main_clk ; None                        ; None                      ; 51.639 ns               ;
+; N/A                                     ; 19.14 MHz ( period = 52.233 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.524 ns               ;
+; N/A                                     ; 19.21 MHz ( period = 52.061 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.352 ns               ;
+; N/A                                     ; 19.22 MHz ( period = 52.017 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.308 ns               ;
+; N/A                                     ; 19.26 MHz ( period = 51.923 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.214 ns               ;
+; N/A                                     ; 19.26 MHz ( period = 51.922 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.213 ns               ;
+; N/A                                     ; 19.28 MHz ( period = 51.866 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 51.157 ns               ;
+; N/A                                     ; 19.36 MHz ( period = 51.648 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.939 ns               ;
+; N/A                                     ; 19.39 MHz ( period = 51.580 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.871 ns               ;
+; N/A                                     ; 19.39 MHz ( period = 51.570 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.861 ns               ;
+; N/A                                     ; 19.43 MHz ( period = 51.475 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.766 ns               ;
+; N/A                                     ; 19.45 MHz ( period = 51.410 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.701 ns               ;
+; N/A                                     ; 19.48 MHz ( period = 51.323 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.614 ns               ;
+; N/A                                     ; 19.50 MHz ( period = 51.274 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.565 ns               ;
+; N/A                                     ; 19.57 MHz ( period = 51.108 ns )                    ; game_core:p1|score1[1]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.399 ns               ;
+; N/A                                     ; 19.66 MHz ( period = 50.854 ns )                    ; game_core:p1|score1[9]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 50.145 ns               ;
+; N/A                                     ; 19.73 MHz ( period = 50.674 ns )                    ; game_core:p1|score2[9]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 49.965 ns               ;
+; N/A                                     ; 19.76 MHz ( period = 50.604 ns )                    ; game_core:p1|score2[11] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 49.895 ns               ;
+; N/A                                     ; 19.77 MHz ( period = 50.594 ns )                    ; game_core:p1|score2[8]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 49.885 ns               ;
+; N/A                                     ; 19.83 MHz ( period = 50.416 ns )                    ; game_core:p1|score2[1]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 49.707 ns               ;
+; N/A                                     ; 19.85 MHz ( period = 50.381 ns )                    ; game_core:p1|score1[8]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 49.672 ns               ;
+; N/A                                     ; 19.86 MHz ( period = 50.363 ns )                    ; game_core:p1|score1[11] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 49.654 ns               ;
+; N/A                                     ; 20.27 MHz ( period = 49.327 ns )                    ; game_core:p1|score2[3]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 48.618 ns               ;
+; N/A                                     ; 20.30 MHz ( period = 49.269 ns )                    ; game_core:p1|score1[0]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 48.560 ns               ;
+; N/A                                     ; 20.33 MHz ( period = 49.195 ns )                    ; game_core:p1|score2[4]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 48.486 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.907 ns )                    ; game_core:p1|score1[4]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 48.198 ns               ;
+; N/A                                     ; 20.52 MHz ( period = 48.735 ns )                    ; game_core:p1|score2[6]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 48.026 ns               ;
+; N/A                                     ; 20.54 MHz ( period = 48.691 ns )                    ; game_core:p1|score2[5]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.982 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.597 ns )                    ; game_core:p1|score1[2]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.888 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.596 ns )                    ; game_core:p1|score1[6]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.887 ns               ;
+; N/A                                     ; 20.60 MHz ( period = 48.540 ns )                    ; game_core:p1|score2[7]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.831 ns               ;
+; N/A                                     ; 20.66 MHz ( period = 48.413 ns )                    ; game_core:p1|score3[1]  ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 47.704 ns               ;
+; N/A                                     ; 20.69 MHz ( period = 48.322 ns )                    ; game_core:p1|score1[7]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.613 ns               ;
+; N/A                                     ; 20.72 MHz ( period = 48.254 ns )                    ; game_core:p1|score1[3]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.545 ns               ;
+; N/A                                     ; 20.73 MHz ( period = 48.244 ns )                    ; game_core:p1|score1[5]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.535 ns               ;
+; N/A                                     ; 20.77 MHz ( period = 48.149 ns )                    ; game_core:p1|score1[10] ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.440 ns               ;
+; N/A                                     ; 20.79 MHz ( period = 48.102 ns )                    ; game_core:p1|score1[12] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 47.393 ns               ;
+; N/A                                     ; 20.80 MHz ( period = 48.084 ns )                    ; game_core:p1|score2[10] ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.375 ns               ;
+; N/A                                     ; 20.83 MHz ( period = 48.001 ns )                    ; game_core:p1|score2[12] ; game_core:p1|tube_number[4] ; main_clk   ; main_clk ; None                        ; None                      ; 47.292 ns               ;
+; N/A                                     ; 20.83 MHz ( period = 47.997 ns )                    ; game_core:p1|score2[2]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.288 ns               ;
+; N/A                                     ; 20.86 MHz ( period = 47.948 ns )                    ; game_core:p1|score2[0]  ; game_core:p1|tube_number[5] ; main_clk   ; main_clk ; None                        ; None                      ; 47.239 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                         ;                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'main_clk'                                                                                                                                                                                                 ;
++------------------------------------------+---------------------------------+------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                            ; To                           ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------------------+------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 4.276 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 4.477 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.022 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.290 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.417 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.794 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.265 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.346 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.350 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.686 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.989 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.060 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.779 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.864 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.837 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.896 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.999 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.520 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.280 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.324 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.381 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.734 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.535 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.508 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.534 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.545 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.269 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.281 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.906 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.678 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.666 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.072 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.816 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.821 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.805 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.760 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.878 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.923 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.952 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.949 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.029 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.104 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.133 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.137 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.226 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.220 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.293 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.026 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.350 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.414 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.510 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.525 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.551 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.647 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.597 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.364 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.605 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.676 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.753 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.803 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.798 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.875 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.003 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.992 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.001 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.071 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.024 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.123 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.235 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.241 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.634 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.392 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.401 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.499 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.541 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.282 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.307 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.545 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.695 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 4.854 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.602 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.959 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.742 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[1]    ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.198 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.767 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[0]    ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.272 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.483 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.586 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempR[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.474 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|nx_state[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 1.905 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[2]            ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.053 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 10.451 ns                ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.234 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.259 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 10.587 ns                ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[1]            ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 10.590 ns                ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.943 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.553 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.072 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.688 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; state_core:p2|nx_state[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 2.379 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.686 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.681 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.679 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.705 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.856 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.882 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.820 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.923 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[1]    ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.897 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|tempR[5]      ; main_clk   ; main_clk ; None                       ; None                       ; 9.435 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[2]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.039 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[0]    ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 5.971 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; state_core:p2|nx_state[0]    ; main_clk   ; main_clk ; None                       ; None                       ; 2.897 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; state_core:p2|nx_state[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 2.940 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.252 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.355 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.374 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; tube_display:p4|score_state  ; main_clk   ; main_clk ; None                       ; None                       ; 3.182 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.576 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|nx_state[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 3.351 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|score_state  ; main_clk   ; main_clk ; None                       ; None                       ; 3.538 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_state   ; main_clk   ; main_clk ; None                       ; None                       ; 3.551 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; state_core:p2|nx_state[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 3.744 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; state_core:p2|nx_state[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 3.866 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|score_state  ; main_clk   ; main_clk ; None                       ; None                       ; 3.988 ns                 ;
+; Not operational: Clock Skew > Data Delay ; random_direction:p5|temp_num[1] ; game_core:p1|direction[3]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.488 ns                 ;
+; Not operational: Clock Skew > Data Delay ; random_direction:p5|temp_num[1] ; game_core:p1|direction[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.489 ns                 ;
+; Not operational: Clock Skew > Data Delay ; random_direction:p5|temp_num[1] ; game_core:p1|direction[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.490 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; game_core:p1|direction[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.500 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; game_core:p1|direction[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.504 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|i[0]            ; game_core:p1|direction[3]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.505 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.389 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.418 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|state1_state    ; dot_display:p3|tempR[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.426 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[2]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[1]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[0]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[7]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[6]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[3]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[4]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|game_sec[5]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.197 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.524 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.530 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|score_sec[0]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.229 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|score_sec[2]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.229 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; dot_display:p3|score_sec[1]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.229 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; dot_display:p3|game_state[1] ; main_clk   ; main_clk ; None                       ; None                       ; 4.397 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; game_core:p1|continue_game   ; main_clk   ; main_clk ; None                       ; None                       ; 4.899 ns                 ;
+; Not operational: Clock Skew > Data Delay ; game_core:p1|direction[2]       ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.272 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[2]      ; state_core:p2|nx_state[0]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.499 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; game_core:p1|tube_number[11] ; main_clk   ; main_clk ; None                       ; None                       ; 4.996 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; game_core:p1|tube_number[10] ; main_clk   ; main_clk ; None                       ; None                       ; 4.999 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[5]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[3]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[2]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[1]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[0]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; tube_display:p4|j[4]         ; main_clk   ; main_clk ; None                       ; None                       ; 4.515 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[1]    ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.868 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[1]    ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.874 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|score_sec[0]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.585 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|score_sec[2]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.585 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[0]      ; dot_display:p3|score_sec[1]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.585 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempC[6]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.902 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[0]    ; dot_display:p3|tempR[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.942 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[0]    ; dot_display:p3|tempR[3]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.948 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; state_core:p2|nx_state[0]    ; main_clk   ; main_clk ; None                       ; None                       ; 4.666 ns                 ;
+; Not operational: Clock Skew > Data Delay ; random_direction:p5|temp_num[1] ; game_core:p1|direction[0]    ; main_clk   ; main_clk ; None                       ; None                       ; 5.281 ns                 ;
+; Not operational: Clock Skew > Data Delay ; game_core:p1|direction[1]       ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.601 ns                 ;
+; Not operational: Clock Skew > Data Delay ; tube_display:p4|score_state     ; dot_display:p3|tempC[1]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.053 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[2]    ; dot_display:p3|tempR[4]      ; main_clk   ; main_clk ; None                       ; None                       ; 6.851 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[0]    ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.170 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[7]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[4]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[5]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[6]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[3]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[2]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[1]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; state_core:p2|pre_state[1]      ; tube_display:p4|game_sec[0]  ; main_clk   ; main_clk ; None                       ; None                       ; 4.888 ns                 ;
+; Not operational: Clock Skew > Data Delay ; dot_display:p3|game_state[1]    ; dot_display:p3|tempC[0]      ; main_clk   ; main_clk ; None                       ; None                       ; 8.217 ns                 ;
+; Not operational: Clock Skew > Data Delay ; game_core:p1|direction[3]       ; dot_display:p3|tempC[7]      ; main_clk   ; main_clk ; None                       ; None                       ; 7.772 ns                 ;
++------------------------------------------+---------------------------------+------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; tsu                                                                                          ;
++-------+--------------+------------+-------------+---------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To                              ; To Clock ;
++-------+--------------+------------+-------------+---------------------------------+----------+
+; N/A   ; None         ; 2.159 ns   ; main_reset  ; div_10hz:p7|clktmp1             ; main_clk ;
+; N/A   ; None         ; 2.141 ns   ; main_reset  ; div_10hz:p7|clktmp2             ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[0]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[1]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[5]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[6]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[4]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[2]  ; main_clk ;
+; N/A   ; None         ; 0.887 ns   ; main_kbrow3 ; button_scan:p6|\KEY1:count1[3]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[0]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[1]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[5]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[6]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[4]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[2]  ; main_clk ;
+; N/A   ; None         ; 0.785 ns   ; main_kbrow2 ; button_scan:p6|\KEY4:count1[3]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[0]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[1]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[5]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[6]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[4]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[2]  ; main_clk ;
+; N/A   ; None         ; 0.736 ns   ; main_kbrow2 ; button_scan:p6|\KEY3:count1[3]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[0]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[1]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[5]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[6]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[4]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[2]  ; main_clk ;
+; N/A   ; None         ; 0.671 ns   ; main_kbrow1 ; button_scan:p6|\KEY2:count1[3]  ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[2]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[1]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[0]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[7]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[6]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[3]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[4]       ; main_clk ;
+; N/A   ; None         ; -0.253 ns  ; main_reset  ; state_core:p2|game_sec[5]       ; main_clk ;
+; N/A   ; None         ; -0.835 ns  ; main_SW7    ; state_core:p2|nx_state[0]       ; main_clk ;
+; N/A   ; None         ; -1.048 ns  ; main_BTN0   ; state_core:p2|nx_state[2]       ; main_clk ;
+; N/A   ; None         ; -1.048 ns  ; main_BTN0   ; state_core:p2|nx_state[1]       ; main_clk ;
+; N/A   ; None         ; -1.123 ns  ; main_kbrow2 ; button_scan:p6|right            ; main_clk ;
+; N/A   ; None         ; -1.217 ns  ; main_kbrow1 ; button_scan:p6|down             ; main_clk ;
+; N/A   ; None         ; -1.283 ns  ; main_kbrow2 ; button_scan:p6|left             ; main_clk ;
+; N/A   ; None         ; -1.526 ns  ; main_reset  ; state_core:p2|self_check_sec[1] ; main_clk ;
+; N/A   ; None         ; -1.526 ns  ; main_reset  ; state_core:p2|self_check_sec[0] ; main_clk ;
+; N/A   ; None         ; -1.526 ns  ; main_reset  ; state_core:p2|self_check_sec[3] ; main_clk ;
+; N/A   ; None         ; -1.526 ns  ; main_reset  ; state_core:p2|self_check_sec[2] ; main_clk ;
+; N/A   ; None         ; -1.526 ns  ; main_reset  ; state_core:p2|self_check_sec[4] ; main_clk ;
+; N/A   ; None         ; -1.925 ns  ; main_kbrow3 ; button_scan:p6|up               ; main_clk ;
+; N/A   ; None         ; -2.270 ns  ; main_BTN0   ; state_core:p2|nx_state[0]       ; main_clk ;
++-------+--------------+------------+-------------+---------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------+
+; tco                                                                                                  ;
++-------+--------------+------------+------------------------------+----------------------+------------+
+; Slack ; Required tco ; Actual tco ; From                         ; To                   ; From Clock ;
++-------+--------------+------------+------------------------------+----------------------+------------+
+; N/A   ; None         ; 22.011 ns  ; dot_display:p3|tempR[2]      ; main_outputR[2]      ; main_clk   ;
+; N/A   ; None         ; 21.959 ns  ; dot_display:p3|tempR[0]      ; main_outputR[0]      ; main_clk   ;
+; N/A   ; None         ; 21.949 ns  ; dot_display:p3|tempR[3]      ; main_outputR[3]      ; main_clk   ;
+; N/A   ; None         ; 21.919 ns  ; dot_display:p3|tempC[6]      ; main_outputC[6]      ; main_clk   ;
+; N/A   ; None         ; 21.875 ns  ; dot_display:p3|tempC[0]      ; main_outputC[0]      ; main_clk   ;
+; N/A   ; None         ; 21.859 ns  ; dot_display:p3|tempC[1]      ; main_outputC[1]      ; main_clk   ;
+; N/A   ; None         ; 21.836 ns  ; dot_display:p3|tempC[3]      ; main_outputC[3]      ; main_clk   ;
+; N/A   ; None         ; 21.199 ns  ; dot_display:p3|tempC[4]      ; main_outputC[4]      ; main_clk   ;
+; N/A   ; None         ; 20.866 ns  ; dot_display:p3|tempR[6]      ; main_outputR[6]      ; main_clk   ;
+; N/A   ; None         ; 20.558 ns  ; dot_display:p3|tempC[5]      ; main_outputC[5]      ; main_clk   ;
+; N/A   ; None         ; 20.550 ns  ; dot_display:p3|tempC[2]      ; main_outputC[2]      ; main_clk   ;
+; N/A   ; None         ; 20.547 ns  ; dot_display:p3|tempC[7]      ; main_outputC[7]      ; main_clk   ;
+; N/A   ; None         ; 20.489 ns  ; dot_display:p3|tempR[4]      ; main_outputR[4]      ; main_clk   ;
+; N/A   ; None         ; 20.473 ns  ; dot_display:p3|tempR[7]      ; main_outputR[7]      ; main_clk   ;
+; N/A   ; None         ; 20.069 ns  ; dot_display:p3|tempR[5]      ; main_outputR[5]      ; main_clk   ;
+; N/A   ; None         ; 19.262 ns  ; dot_display:p3|tempR[1]      ; main_outputR[1]      ; main_clk   ;
+; N/A   ; None         ; 19.141 ns  ; tube_display:p4|score_state  ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 18.479 ns  ; tube_display:p4|game_state   ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 18.190 ns  ; tube_display:p4|state1_state ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 17.512 ns  ; tube_display:p4|score_state  ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 17.490 ns  ; tube_display:p4|score_state  ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 17.376 ns  ; tube_display:p4|score_state  ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 17.361 ns  ; tube_display:p4|score_state  ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 17.094 ns  ; tube_display:p4|i[0]         ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.850 ns  ; tube_display:p4|game_state   ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 16.828 ns  ; tube_display:p4|game_state   ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 16.714 ns  ; tube_display:p4|game_state   ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 16.699 ns  ; tube_display:p4|game_state   ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 16.661 ns  ; state_core:p2|pre_state[0]   ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 16.597 ns  ; state_core:p2|pre_state[1]   ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 16.535 ns  ; tube_display:p4|i[0]         ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 16.435 ns  ; tube_display:p4|tube2[6]     ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.427 ns  ; tube_display:p4|tube1[6]     ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.415 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.338 ns  ; tube_display:p4|i[1]         ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 16.320 ns  ; state_core:p2|pre_state[0]   ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 16.293 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.265 ns  ; tube_display:p4|score_state  ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 16.264 ns  ; tube_display:p4|score_state  ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 16.256 ns  ; state_core:p2|pre_state[1]   ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 16.197 ns  ; tube_display:p4|i[1]         ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 16.122 ns  ; tube_display:p4|i[1]         ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.109 ns  ; tube_display:p4|tube1[4]     ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 16.089 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 16.039 ns  ; state_core:p2|pre_state[0]   ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 15.975 ns  ; state_core:p2|pre_state[1]   ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 15.950 ns  ; tube_display:p4|i[2]         ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 15.929 ns  ; tube_display:p4|i[0]         ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 15.835 ns  ; tube_display:p4|state1_state ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 15.813 ns  ; tube_display:p4|state1_state ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 15.685 ns  ; tube_display:p4|state1_state ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 15.684 ns  ; tube_display:p4|state1_state ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 15.632 ns  ; tube_display:p4|i[1]         ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 15.603 ns  ; tube_display:p4|i[2]         ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 15.603 ns  ; tube_display:p4|game_state   ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 15.602 ns  ; tube_display:p4|game_state   ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 15.497 ns  ; tube_display:p4|tube2[1]     ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 15.476 ns  ; tube_display:p4|tube4[6]     ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 15.452 ns  ; tube_display:p4|i[2]         ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 15.445 ns  ; tube_display:p4|i[2]         ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 15.381 ns  ; tube_display:p4|i[0]         ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 15.273 ns  ; tube_display:p4|i[1]         ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 15.266 ns  ; tube_display:p4|i[1]         ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 15.241 ns  ; tube_display:p4|tube1[1]     ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 15.226 ns  ; tube_display:p4|i[0]         ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 15.197 ns  ; tube_display:p4|i[1]         ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 15.113 ns  ; state_core:p2|pre_state[2]   ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 15.095 ns  ; tube_display:p4|i[2]         ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 15.069 ns  ; tube_display:p4|tube4[4]     ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 15.054 ns  ; tube_display:p4|tube2[4]     ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 15.032 ns  ; tube_display:p4|i[1]         ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 15.004 ns  ; state_core:p2|pre_state[1]   ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 14.978 ns  ; tube_display:p4|i[0]         ; main_output_index[5] ; main_clk   ;
+; N/A   ; None         ; 14.946 ns  ; tube_display:p4|i[1]         ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 14.938 ns  ; state_core:p2|pre_state[0]   ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 14.890 ns  ; tube_display:p4|tube3[5]     ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 14.849 ns  ; tube_display:p4|i[1]         ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 14.806 ns  ; tube_display:p4|tube3[6]     ; main_output_tube[6]  ; main_clk   ;
+; N/A   ; None         ; 14.786 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 14.772 ns  ; state_core:p2|pre_state[2]   ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 14.764 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 14.736 ns  ; tube_display:p4|i[1]         ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 14.695 ns  ; tube_display:p4|i[2]         ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 14.664 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 14.650 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 14.642 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 14.635 ns  ; tube_display:p4|i[0]         ; main_output_index[4] ; main_clk   ;
+; N/A   ; None         ; 14.635 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 14.632 ns  ; state_core:p2|pre_state[1]   ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 14.617 ns  ; tube_display:p4|tube2[5]     ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 14.585 ns  ; tube_display:p4|state1_state ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 14.582 ns  ; tube_display:p4|state1_state ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 14.560 ns  ; tube_display:p4|tube1[2]     ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 14.548 ns  ; tube_display:p4|tube2[2]     ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 14.531 ns  ; state_core:p2|pre_state[0]   ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 14.528 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 14.513 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 14.491 ns  ; state_core:p2|pre_state[2]   ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 14.412 ns  ; tube_display:p4|i[0]         ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 14.398 ns  ; tube_display:p4|tube4[1]     ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 14.396 ns  ; state_core:p2|pre_state[2]   ; main_output_index[1] ; main_clk   ;
+; N/A   ; None         ; 14.331 ns  ; tube_display:p4|i[0]         ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 14.273 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 14.251 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 14.251 ns  ; state_core:p2|pre_state[0]   ; main_output_state[5] ; main_clk   ;
+; N/A   ; None         ; 14.245 ns  ; tube_display:p4|i[0]         ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 14.187 ns  ; state_core:p2|pre_state[1]   ; main_output_state[5] ; main_clk   ;
+; N/A   ; None         ; 14.122 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 14.106 ns  ; tube_display:p4|i[0]         ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 14.046 ns  ; tube_display:p4|tube3[1]     ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 13.925 ns  ; state_core:p2|pre_state[2]   ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 13.924 ns  ; tube_display:p4|i[1]         ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 13.898 ns  ; tube_display:p4|i[0]         ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 13.823 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 13.816 ns  ; tube_display:p4|i[2]         ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 13.809 ns  ; tube_display:p4|i[2]         ; main_output_index[2] ; main_clk   ;
+; N/A   ; None         ; 13.796 ns  ; state_core:p2|pre_state[0]   ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 13.794 ns  ; tube_display:p4|i[2]         ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 13.705 ns  ; tube_display:p4|i[0]         ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 13.680 ns  ; tube_display:p4|i[2]         ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 13.665 ns  ; tube_display:p4|i[2]         ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 13.539 ns  ; tube_display:p4|i[0]         ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 13.539 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 13.538 ns  ; state_core:p2|pre_state[0]   ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 13.505 ns  ; tube_display:p4|i[1]         ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 13.484 ns  ; state_core:p2|pre_state[1]   ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 13.472 ns  ; tube_display:p4|tube4[2]     ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 13.464 ns  ; tube_display:p4|tube3[4]     ; main_output_tube[4]  ; main_clk   ;
+; N/A   ; None         ; 13.457 ns  ; tube_display:p4|i[2]         ; main_output_index[3] ; main_clk   ;
+; N/A   ; None         ; 13.417 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 13.416 ns  ; state_core:p2|pre_state[2]   ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 13.337 ns  ; tube_display:p4|tube1[3]     ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 13.246 ns  ; state_core:p2|pre_state[1]   ; main_output_state[4] ; main_clk   ;
+; N/A   ; None         ; 13.184 ns  ; state_core:p2|pre_state[1]   ; main_output_state[2] ; main_clk   ;
+; N/A   ; None         ; 13.177 ns  ; tube_display:p4|i[0]         ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 13.174 ns  ; state_core:p2|pre_state[1]   ; main_output_state[3] ; main_clk   ;
+; N/A   ; None         ; 13.138 ns  ; tube_display:p4|tube3[2]     ; main_output_tube[2]  ; main_clk   ;
+; N/A   ; None         ; 13.106 ns  ; tube_display:p4|i[1]         ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 12.993 ns  ; tube_display:p4|tube4[5]     ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 12.971 ns  ; tube_display:p4|tube3[3]     ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 12.960 ns  ; tube_display:p4|tube1[5]     ; main_output_tube[5]  ; main_clk   ;
+; N/A   ; None         ; 12.946 ns  ; state_core:p2|pre_state[2]   ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 12.834 ns  ; tube_display:p4|tube4[3]     ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 12.828 ns  ; state_core:p2|pre_state[2]   ; main_output_state[1] ; main_clk   ;
+; N/A   ; None         ; 12.800 ns  ; tube_display:p4|tube2[3]     ; main_output_tube[3]  ; main_clk   ;
+; N/A   ; None         ; 12.777 ns  ; state_core:p2|pre_state[2]   ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 12.754 ns  ; state_core:p2|pre_state[0]   ; main_output_state[4] ; main_clk   ;
+; N/A   ; None         ; 12.729 ns  ; state_core:p2|pre_state[0]   ; main_output_state[2] ; main_clk   ;
+; N/A   ; None         ; 12.716 ns  ; state_core:p2|pre_state[0]   ; main_output_state[3] ; main_clk   ;
+; N/A   ; None         ; 12.714 ns  ; state_core:p2|pre_state[0]   ; main_output_state[0] ; main_clk   ;
+; N/A   ; None         ; 12.711 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 12.710 ns  ; state_core:p2|pre_state[1]   ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 12.703 ns  ; state_core:p2|pre_state[2]   ; main_output_state[5] ; main_clk   ;
+; N/A   ; None         ; 12.674 ns  ; tube_display:p4|i[2]         ; main_output_index[0] ; main_clk   ;
+; N/A   ; None         ; 12.649 ns  ; state_core:p2|pre_state[1]   ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 12.642 ns  ; state_core:p2|pre_state[1]   ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 12.569 ns  ; tube_display:p4|i[2]         ; main_output_tube[1]  ; main_clk   ;
+; N/A   ; None         ; 12.568 ns  ; tube_display:p4|i[2]         ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 12.543 ns  ; tube_display:p4|tube2[0]     ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 12.533 ns  ; state_core:p2|pre_state[0]   ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 12.510 ns  ; state_core:p2|pre_state[0]   ; main_output_index[6] ; main_clk   ;
+; N/A   ; None         ; 12.495 ns  ; state_core:p2|pre_state[2]   ; main_output_index[7] ; main_clk   ;
+; N/A   ; None         ; 12.294 ns  ; state_core:p2|pre_state[2]   ; main_output_state[4] ; main_clk   ;
+; N/A   ; None         ; 12.249 ns  ; state_core:p2|pre_state[2]   ; main_output_state[0] ; main_clk   ;
+; N/A   ; None         ; 11.868 ns  ; tube_display:p4|tube4[0]     ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 11.625 ns  ; tube_display:p4|tube3[0]     ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 11.424 ns  ; tube_display:p4|tube1[0]     ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 11.336 ns  ; tube_display:p4|i[1]         ; main_output_tube[0]  ; main_clk   ;
+; N/A   ; None         ; 11.234 ns  ; state_core:p2|pre_state[0]   ; main_output_state[1] ; main_clk   ;
++-------+--------------+------------+------------------------------+----------------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; th                                                                                                 ;
++---------------+-------------+-----------+-------------+---------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To                              ; To Clock ;
++---------------+-------------+-----------+-------------+---------------------------------+----------+
+; N/A           ; None        ; 2.824 ns  ; main_BTN0   ; state_core:p2|nx_state[0]       ; main_clk ;
+; N/A           ; None        ; 2.479 ns  ; main_kbrow3 ; button_scan:p6|up               ; main_clk ;
+; N/A           ; None        ; 2.080 ns  ; main_reset  ; state_core:p2|self_check_sec[1] ; main_clk ;
+; N/A           ; None        ; 2.080 ns  ; main_reset  ; state_core:p2|self_check_sec[0] ; main_clk ;
+; N/A           ; None        ; 2.080 ns  ; main_reset  ; state_core:p2|self_check_sec[3] ; main_clk ;
+; N/A           ; None        ; 2.080 ns  ; main_reset  ; state_core:p2|self_check_sec[2] ; main_clk ;
+; N/A           ; None        ; 2.080 ns  ; main_reset  ; state_core:p2|self_check_sec[4] ; main_clk ;
+; N/A           ; None        ; 1.837 ns  ; main_kbrow2 ; button_scan:p6|left             ; main_clk ;
+; N/A           ; None        ; 1.771 ns  ; main_kbrow1 ; button_scan:p6|down             ; main_clk ;
+; N/A           ; None        ; 1.677 ns  ; main_kbrow2 ; button_scan:p6|right            ; main_clk ;
+; N/A           ; None        ; 1.602 ns  ; main_BTN0   ; state_core:p2|nx_state[2]       ; main_clk ;
+; N/A           ; None        ; 1.602 ns  ; main_BTN0   ; state_core:p2|nx_state[1]       ; main_clk ;
+; N/A           ; None        ; 1.389 ns  ; main_SW7    ; state_core:p2|nx_state[0]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[2]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[1]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[0]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[7]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[6]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[3]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[4]       ; main_clk ;
+; N/A           ; None        ; 0.807 ns  ; main_reset  ; state_core:p2|game_sec[5]       ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[0]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[1]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[5]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[6]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[4]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[2]  ; main_clk ;
+; N/A           ; None        ; -0.117 ns ; main_kbrow1 ; button_scan:p6|\KEY2:count1[3]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[0]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[1]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[5]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[6]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[4]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[2]  ; main_clk ;
+; N/A           ; None        ; -0.182 ns ; main_kbrow2 ; button_scan:p6|\KEY3:count1[3]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[0]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[1]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[5]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[6]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[4]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[2]  ; main_clk ;
+; N/A           ; None        ; -0.231 ns ; main_kbrow2 ; button_scan:p6|\KEY4:count1[3]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[0]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[1]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[5]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[6]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[4]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[2]  ; main_clk ;
+; N/A           ; None        ; -0.333 ns ; main_kbrow3 ; button_scan:p6|\KEY1:count1[3]  ; main_clk ;
+; N/A           ; None        ; -1.587 ns ; main_reset  ; div_10hz:p7|clktmp2             ; main_clk ;
+; N/A           ; None        ; -1.605 ns ; main_reset  ; div_10hz:p7|clktmp1             ; main_clk ;
++---------------+-------------+-----------+-------------+---------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sat Nov 03 13:01:47 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ActionTestGame -c ActionTestGame
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "dot_display:p3|tempR[0]" is a latch
+    Warning: Node "dot_display:p3|tempR[1]" is a latch
+    Warning: Node "dot_display:p3|tempR[2]" is a latch
+    Warning: Node "dot_display:p3|tempR[3]" is a latch
+    Warning: Node "dot_display:p3|tempR[4]" is a latch
+    Warning: Node "dot_display:p3|tempR[5]" is a latch
+    Warning: Node "dot_display:p3|tempR[6]" is a latch
+    Warning: Node "dot_display:p3|tempR[7]" is a latch
+    Warning: Node "dot_display:p3|tempC[0]" is a latch
+    Warning: Node "dot_display:p3|tempC[1]" is a latch
+    Warning: Node "dot_display:p3|tempC[2]" is a latch
+    Warning: Node "dot_display:p3|tempC[3]" is a latch
+    Warning: Node "dot_display:p3|tempC[4]" is a latch
+    Warning: Node "dot_display:p3|tempC[5]" is a latch
+    Warning: Node "dot_display:p3|tempC[6]" is a latch
+    Warning: Node "dot_display:p3|tempC[7]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "main_clk" is an undefined clock
+Warning: Found 17 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "button_scan:p6|clk500" as buffer
+    Info: Detected ripple clock "button_scan:p6|clk50k" as buffer
+    Info: Detected gated clock "dot_display:p3|tempR[7]~50" as buffer
+    Info: Detected gated clock "dot_display:p3|tempR[7]~49" as buffer
+    Info: Detected ripple clock "game_core:p1|direction[0]" as buffer
+    Info: Detected gated clock "dot_display:p3|tempR[7]~48" as buffer
+    Info: Detected ripple clock "game_core:p1|direction[1]" as buffer
+    Info: Detected ripple clock "game_core:p1|direction[3]" as buffer
+    Info: Detected ripple clock "div_10hz:p7|clktmp2" as buffer
+    Info: Detected ripple clock "game_core:p1|direction[2]" as buffer
+    Info: Detected ripple clock "dot_display:p3|game_state[1]" as buffer
+    Info: Detected ripple clock "dot_display:p3|game_state[0]" as buffer
+    Info: Detected ripple clock "dot_display:p3|game_state[2]" as buffer
+    Info: Detected ripple clock "div_10hz:p7|clktmp1" as buffer
+    Info: Detected ripple clock "state_core:p2|pre_state[1]" as buffer
+    Info: Detected ripple clock "state_core:p2|pre_state[0]" as buffer
+    Info: Detected ripple clock "state_core:p2|pre_state[2]" as buffer
+Info: Clock "main_clk" has Internal fmax of 14.5 MHz between source register "game_core:p1|score2[1]" and destination register "game_core:p1|tube_number[0]" (period= 68.954 ns)
+    Info: + Longest register to register delay is 68.245 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X10_Y10_N3; Fanout = 3; REG Node = 'game_core:p1|score2[1]'
+        Info: 2: + IC(3.416 ns) + CELL(1.077 ns) = 4.493 ns; Loc. = LC_X11_Y9_N4; Fanout = 6; COMB Node = 'game_core:p1|Add2~62'
+        Info: 3: + IC(0.000 ns) + CELL(0.349 ns) = 4.842 ns; Loc. = LC_X11_Y9_N9; Fanout = 6; COMB Node = 'game_core:p1|Add2~54'
+        Info: 4: + IC(0.000 ns) + CELL(1.234 ns) = 6.076 ns; Loc. = LC_X12_Y9_N4; Fanout = 2; COMB Node = 'game_core:p1|Add2~41'
+        Info: 5: + IC(2.527 ns) + CELL(1.077 ns) = 9.680 ns; Loc. = LC_X13_Y8_N4; Fanout = 3; COMB Node = 'game_core:p1|Add3~45'
+        Info: 6: + IC(0.000 ns) + CELL(0.975 ns) = 10.655 ns; Loc. = LC_X13_Y8_N5; Fanout = 5; COMB Node = 'game_core:p1|Add3~60'
+        Info: 7: + IC(0.692 ns) + CELL(0.978 ns) = 12.325 ns; Loc. = LC_X13_Y8_N8; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2|add_sub_cella[0]~COUT'
+        Info: 8: + IC(0.000 ns) + CELL(0.815 ns) = 13.140 ns; Loc. = LC_X13_Y8_N9; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2|add_sub_cella[1]~20'
+        Info: 9: + IC(1.098 ns) + CELL(0.978 ns) = 15.216 ns; Loc. = LC_X14_Y8_N6; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2|add_sub_cella[1]~17'
+        Info: 10: + IC(0.000 ns) + CELL(0.123 ns) = 15.339 ns; Loc. = LC_X14_Y8_N7; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2|add_sub_cella[1]~15'
+        Info: 11: + IC(0.000 ns) + CELL(0.815 ns) = 16.154 ns; Loc. = LC_X14_Y8_N8; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_2|add_sub_cella[1]~12'
+        Info: 12: + IC(2.428 ns) + CELL(0.200 ns) = 18.782 ns; Loc. = LC_X15_Y10_N9; Fanout = 2; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[7]~76'
+        Info: 13: + IC(0.729 ns) + CELL(0.747 ns) = 20.258 ns; Loc. = LC_X15_Y10_N3; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_3|add_sub_cella[1]~15'
+        Info: 14: + IC(0.000 ns) + CELL(0.815 ns) = 21.073 ns; Loc. = LC_X15_Y10_N4; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_3|add_sub_cella[1]~12'
+        Info: 15: + IC(0.797 ns) + CELL(0.511 ns) = 22.381 ns; Loc. = LC_X15_Y10_N8; Fanout = 2; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[10]~67'
+        Info: 16: + IC(0.699 ns) + CELL(0.978 ns) = 24.058 ns; Loc. = LC_X15_Y10_N6; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_4|add_sub_cella[1]~15'
+        Info: 17: + IC(0.000 ns) + CELL(0.815 ns) = 24.873 ns; Loc. = LC_X15_Y10_N7; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_4|add_sub_cella[1]~12'
+        Info: 18: + IC(1.138 ns) + CELL(0.200 ns) = 26.211 ns; Loc. = LC_X16_Y10_N9; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[12]~93'
+        Info: 19: + IC(1.785 ns) + CELL(0.747 ns) = 28.743 ns; Loc. = LC_X15_Y9_N1; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_5|add_sub_cella[1]~17'
+        Info: 20: + IC(0.000 ns) + CELL(0.123 ns) = 28.866 ns; Loc. = LC_X15_Y9_N2; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_5|add_sub_cella[1]~15'
+        Info: 21: + IC(0.000 ns) + CELL(0.815 ns) = 29.681 ns; Loc. = LC_X15_Y9_N3; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_5|add_sub_cella[1]~12'
+        Info: 22: + IC(0.734 ns) + CELL(0.200 ns) = 30.615 ns; Loc. = LC_X15_Y9_N6; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[15]~94'
+        Info: 23: + IC(0.709 ns) + CELL(0.978 ns) = 32.302 ns; Loc. = LC_X15_Y9_N7; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_6|add_sub_cella[1]~17'
+        Info: 24: + IC(0.000 ns) + CELL(0.123 ns) = 32.425 ns; Loc. = LC_X15_Y9_N8; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_6|add_sub_cella[1]~15'
+        Info: 25: + IC(0.000 ns) + CELL(0.815 ns) = 33.240 ns; Loc. = LC_X15_Y9_N9; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_6|add_sub_cella[1]~12'
+        Info: 26: + IC(1.181 ns) + CELL(0.511 ns) = 34.932 ns; Loc. = LC_X16_Y9_N3; Fanout = 2; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[19]~49'
+        Info: 27: + IC(2.341 ns) + CELL(0.747 ns) = 38.020 ns; Loc. = LC_X8_Y9_N8; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_7|add_sub_cella[1]~15'
+        Info: 28: + IC(0.000 ns) + CELL(0.815 ns) = 38.835 ns; Loc. = LC_X8_Y9_N9; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_7|add_sub_cella[1]~12'
+        Info: 29: + IC(0.752 ns) + CELL(0.200 ns) = 39.787 ns; Loc. = LC_X8_Y9_N4; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[21]~96'
+        Info: 30: + IC(0.711 ns) + CELL(0.978 ns) = 41.476 ns; Loc. = LC_X8_Y9_N1; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_8|add_sub_cella[1]~17'
+        Info: 31: + IC(0.000 ns) + CELL(0.123 ns) = 41.599 ns; Loc. = LC_X8_Y9_N2; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_8|add_sub_cella[1]~15'
+        Info: 32: + IC(0.000 ns) + CELL(0.815 ns) = 42.414 ns; Loc. = LC_X8_Y9_N3; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_8|add_sub_cella[1]~12'
+        Info: 33: + IC(1.215 ns) + CELL(0.511 ns) = 44.140 ns; Loc. = LC_X7_Y9_N4; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[24]~97'
+        Info: 34: + IC(1.113 ns) + CELL(0.747 ns) = 46.000 ns; Loc. = LC_X6_Y9_N1; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_9|add_sub_cella[1]~17'
+        Info: 35: + IC(0.000 ns) + CELL(0.123 ns) = 46.123 ns; Loc. = LC_X6_Y9_N2; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_9|add_sub_cella[1]~15'
+        Info: 36: + IC(0.000 ns) + CELL(0.815 ns) = 46.938 ns; Loc. = LC_X6_Y9_N3; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_9|add_sub_cella[1]~12'
+        Info: 37: + IC(0.743 ns) + CELL(0.200 ns) = 47.881 ns; Loc. = LC_X6_Y9_N6; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[27]~100'
+        Info: 38: + IC(0.709 ns) + CELL(0.978 ns) = 49.568 ns; Loc. = LC_X6_Y9_N7; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_10|add_sub_cella[1]~17'
+        Info: 39: + IC(0.000 ns) + CELL(0.123 ns) = 49.691 ns; Loc. = LC_X6_Y9_N8; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_10|add_sub_cella[1]~15'
+        Info: 40: + IC(0.000 ns) + CELL(0.815 ns) = 50.506 ns; Loc. = LC_X6_Y9_N9; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_10|add_sub_cella[1]~12'
+        Info: 41: + IC(1.879 ns) + CELL(0.200 ns) = 52.585 ns; Loc. = LC_X5_Y6_N5; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[30]~98'
+        Info: 42: + IC(1.973 ns) + CELL(0.747 ns) = 55.305 ns; Loc. = LC_X5_Y8_N1; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_11|add_sub_cella[1]~17'
+        Info: 43: + IC(0.000 ns) + CELL(0.123 ns) = 55.428 ns; Loc. = LC_X5_Y8_N2; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_11|add_sub_cella[1]~15'
+        Info: 44: + IC(0.000 ns) + CELL(0.815 ns) = 56.243 ns; Loc. = LC_X5_Y8_N3; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_11|add_sub_cella[1]~12'
+        Info: 45: + IC(0.756 ns) + CELL(0.200 ns) = 57.199 ns; Loc. = LC_X5_Y8_N5; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[33]~99'
+        Info: 46: + IC(0.701 ns) + CELL(0.978 ns) = 58.878 ns; Loc. = LC_X5_Y8_N7; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_12|add_sub_cella[1]~17'
+        Info: 47: + IC(0.000 ns) + CELL(0.123 ns) = 59.001 ns; Loc. = LC_X5_Y8_N8; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_12|add_sub_cella[1]~15'
+        Info: 48: + IC(0.000 ns) + CELL(0.815 ns) = 59.816 ns; Loc. = LC_X5_Y8_N9; Fanout = 5; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_12|add_sub_cella[1]~12'
+        Info: 49: + IC(1.205 ns) + CELL(0.511 ns) = 61.532 ns; Loc. = LC_X6_Y8_N2; Fanout = 3; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[36]~90'
+        Info: 50: + IC(1.121 ns) + CELL(0.747 ns) = 63.400 ns; Loc. = LC_X7_Y8_N0; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_13|add_sub_cella[1]~17'
+        Info: 51: + IC(0.000 ns) + CELL(0.123 ns) = 63.523 ns; Loc. = LC_X7_Y8_N1; Fanout = 1; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_13|add_sub_cella[1]~15'
+        Info: 52: + IC(0.000 ns) + CELL(0.815 ns) = 64.338 ns; Loc. = LC_X7_Y8_N2; Fanout = 4; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_13|add_sub_cella[1]~12'
+        Info: 53: + IC(0.744 ns) + CELL(0.200 ns) = 65.282 ns; Loc. = LC_X7_Y8_N8; Fanout = 2; COMB Node = 'game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|StageOut[39]~91'
+        Info: 54: + IC(0.701 ns) + CELL(0.978 ns) = 66.961 ns; Loc. = LC_X7_Y8_N5; Fanout = 1; COMB Node = 'game_core:p1|tube_number[0]~206COUT0_216'
+        Info: 55: + IC(0.000 ns) + CELL(0.123 ns) = 67.084 ns; Loc. = LC_X7_Y8_N6; Fanout = 1; COMB Node = 'game_core:p1|tube_number[0]~197COUT0_219'
+        Info: 56: + IC(0.000 ns) + CELL(1.161 ns) = 68.245 ns; Loc. = LC_X7_Y8_N7; Fanout = 1; REG Node = 'game_core:p1|tube_number[0]'
+        Info: Total cell delay = 33.648 ns ( 49.30 % )
+        Info: Total interconnect delay = 34.597 ns ( 50.70 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "main_clk" to destination register is 9.451 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y4_N9; Fanout = 86; REG Node = 'div_10hz:p7|clktmp2'
+            Info: 3: + IC(4.338 ns) + CELL(0.918 ns) = 9.451 ns; Loc. = LC_X7_Y8_N7; Fanout = 1; REG Node = 'game_core:p1|tube_number[0]'
+            Info: Total cell delay = 3.375 ns ( 35.71 % )
+            Info: Total interconnect delay = 6.076 ns ( 64.29 % )
+        Info: - Longest clock path from clock "main_clk" to source register is 9.451 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y4_N9; Fanout = 86; REG Node = 'div_10hz:p7|clktmp2'
+            Info: 3: + IC(4.338 ns) + CELL(0.918 ns) = 9.451 ns; Loc. = LC_X10_Y10_N3; Fanout = 3; REG Node = 'game_core:p1|score2[1]'
+            Info: Total cell delay = 3.375 ns ( 35.71 % )
+            Info: Total interconnect delay = 6.076 ns ( 64.29 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Warning: Circuit may not operate. Detected 186 non-operational path(s) clocked by clock "main_clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "tube_display:p4|i[2]" and destination pin or register "dot_display:p3|tempR[2]" for clock "main_clk" (Hold time is 9.162 ns)
+    Info: + Largest clock skew is 13.814 ns
+        Info: + Longest clock path from clock "main_clk" to destination register is 17.633 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y4_N9; Fanout = 86; REG Node = 'div_10hz:p7|clktmp2'
+            Info: 3: + IC(4.338 ns) + CELL(1.294 ns) = 9.827 ns; Loc. = LC_X3_Y8_N3; Fanout = 5; REG Node = 'game_core:p1|direction[0]'
+            Info: 4: + IC(1.433 ns) + CELL(0.511 ns) = 11.771 ns; Loc. = LC_X3_Y8_N2; Fanout = 1; COMB Node = 'dot_display:p3|tempR[7]~48'
+            Info: 5: + IC(1.163 ns) + CELL(0.740 ns) = 13.674 ns; Loc. = LC_X2_Y8_N2; Fanout = 1; COMB Node = 'dot_display:p3|tempR[7]~49'
+            Info: 6: + IC(1.192 ns) + CELL(0.511 ns) = 15.377 ns; Loc. = LC_X1_Y8_N3; Fanout = 16; COMB Node = 'dot_display:p3|tempR[7]~50'
+            Info: 7: + IC(2.056 ns) + CELL(0.200 ns) = 17.633 ns; Loc. = LC_X1_Y5_N7; Fanout = 1; REG Node = 'dot_display:p3|tempR[2]'
+            Info: Total cell delay = 5.713 ns ( 32.40 % )
+            Info: Total interconnect delay = 11.920 ns ( 67.60 % )
+        Info: - Shortest clock path from clock "main_clk" to source register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X2_Y6_N9; Fanout = 31; REG Node = 'tube_display:p4|i[2]'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 4.276 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y6_N9; Fanout = 31; REG Node = 'tube_display:p4|i[2]'
+        Info: 2: + IC(2.074 ns) + CELL(0.740 ns) = 2.814 ns; Loc. = LC_X1_Y5_N2; Fanout = 1; COMB Node = 'dot_display:p3|tempR[2]~52'
+        Info: 3: + IC(0.722 ns) + CELL(0.740 ns) = 4.276 ns; Loc. = LC_X1_Y5_N7; Fanout = 1; REG Node = 'dot_display:p3|tempR[2]'
+        Info: Total cell delay = 1.480 ns ( 34.61 % )
+        Info: Total interconnect delay = 2.796 ns ( 65.39 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "div_10hz:p7|clktmp1" (data pin = "main_reset", clock pin = "main_clk") is 2.159 ns
+    Info: + Longest pin to register delay is 5.645 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_124; Fanout = 30; PIN Node = 'main_reset'
+        Info: 2: + IC(3.452 ns) + CELL(1.061 ns) = 5.645 ns; Loc. = LC_X11_Y5_N0; Fanout = 40; REG Node = 'div_10hz:p7|clktmp1'
+        Info: Total cell delay = 2.193 ns ( 38.85 % )
+        Info: Total interconnect delay = 3.452 ns ( 61.15 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "main_clk" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X11_Y5_N0; Fanout = 40; REG Node = 'div_10hz:p7|clktmp1'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "main_clk" to destination pin "main_outputR[2]" through register "dot_display:p3|tempR[2]" is 22.011 ns
+    Info: + Longest clock path from clock "main_clk" to source register is 17.633 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X10_Y4_N9; Fanout = 86; REG Node = 'div_10hz:p7|clktmp2'
+        Info: 3: + IC(4.338 ns) + CELL(1.294 ns) = 9.827 ns; Loc. = LC_X3_Y8_N3; Fanout = 5; REG Node = 'game_core:p1|direction[0]'
+        Info: 4: + IC(1.433 ns) + CELL(0.511 ns) = 11.771 ns; Loc. = LC_X3_Y8_N2; Fanout = 1; COMB Node = 'dot_display:p3|tempR[7]~48'
+        Info: 5: + IC(1.163 ns) + CELL(0.740 ns) = 13.674 ns; Loc. = LC_X2_Y8_N2; Fanout = 1; COMB Node = 'dot_display:p3|tempR[7]~49'
+        Info: 6: + IC(1.192 ns) + CELL(0.511 ns) = 15.377 ns; Loc. = LC_X1_Y8_N3; Fanout = 16; COMB Node = 'dot_display:p3|tempR[7]~50'
+        Info: 7: + IC(2.056 ns) + CELL(0.200 ns) = 17.633 ns; Loc. = LC_X1_Y5_N7; Fanout = 1; REG Node = 'dot_display:p3|tempR[2]'
+        Info: Total cell delay = 5.713 ns ( 32.40 % )
+        Info: Total interconnect delay = 11.920 ns ( 67.60 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 4.378 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X1_Y5_N7; Fanout = 1; REG Node = 'dot_display:p3|tempR[2]'
+        Info: 2: + IC(2.056 ns) + CELL(2.322 ns) = 4.378 ns; Loc. = PIN_6; Fanout = 0; PIN Node = 'main_outputR[2]'
+        Info: Total cell delay = 2.322 ns ( 53.04 % )
+        Info: Total interconnect delay = 2.056 ns ( 46.96 % )
+Info: th for register "state_core:p2|nx_state[0]" (data pin = "main_BTN0", clock pin = "main_clk") is 2.824 ns
+    Info: + Longest clock path from clock "main_clk" to destination register is 8.957 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_18; Fanout = 132; CLK Node = 'main_clk'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X11_Y5_N0; Fanout = 40; REG Node = 'div_10hz:p7|clktmp1'
+        Info: 3: + IC(3.844 ns) + CELL(0.918 ns) = 8.957 ns; Loc. = LC_X9_Y4_N6; Fanout = 2; REG Node = 'state_core:p2|nx_state[0]'
+        Info: Total cell delay = 3.375 ns ( 37.68 % )
+        Info: Total interconnect delay = 5.582 ns ( 62.32 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 6.354 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 2; PIN Node = 'main_BTN0'
+        Info: 2: + IC(3.717 ns) + CELL(0.200 ns) = 5.049 ns; Loc. = LC_X9_Y4_N2; Fanout = 1; COMB Node = 'state_core:p2|nx_state~27'
+        Info: 3: + IC(0.714 ns) + CELL(0.591 ns) = 6.354 ns; Loc. = LC_X9_Y4_N6; Fanout = 2; REG Node = 'state_core:p2|nx_state[0]'
+        Info: Total cell delay = 1.923 ns ( 30.26 % )
+        Info: Total interconnect delay = 4.431 ns ( 69.74 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 213 megabytes
+    Info: Processing ended: Sat Nov 03 13:01:48 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

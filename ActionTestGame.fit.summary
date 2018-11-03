@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Nov 03 13:01:43 2018
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : ActionTestGame
+Top-level Entity Name : ActionTestGame
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 866 / 1,270 ( 68 % )
+Total pins : 49 / 116 ( 42 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

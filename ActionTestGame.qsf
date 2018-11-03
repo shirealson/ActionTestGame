@@ -1,0 +1,118 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 17:51:42  October 22, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ActionTestGame_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM1270T144C5
+set_global_assignment -name TOP_LEVEL_ENTITY ActionTestGame
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:51:42  OCTOBER 22, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.0
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name VHDL_FILE score_recorder.vhd
+set_global_assignment -name VHDL_FILE div_10hz.vhd
+set_global_assignment -name VHDL_FILE dot_display.vhd
+set_global_assignment -name VHDL_FILE tube_display.vhd
+set_global_assignment -name VHDL_FILE state_core.vhd
+set_global_assignment -name VHDL_FILE "../my id/ActionTestGame.vhd"
+set_global_assignment -name VHDL_FILE ActionTestGame.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name MISC_FILE "C:/Users/Administrator/Desktop/ActionTestGame/ActionTestGame.dpf"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE ActionTestGame.vwf
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_61 -to main_BTN0
+set_location_assignment PIN_18 -to main_clk
+set_location_assignment PIN_31 -to main_output_index[7]
+set_location_assignment PIN_63 -to main_output_index[0]
+set_location_assignment PIN_62 -to main_output_tube[6]
+set_location_assignment PIN_66 -to main_output_index[1]
+set_location_assignment PIN_67 -to main_output_index[2]
+set_location_assignment PIN_68 -to main_output_index[3]
+set_location_assignment PIN_69 -to main_output_index[4]
+set_location_assignment PIN_70 -to main_output_index[5]
+set_location_assignment PIN_30 -to main_output_index[6]
+set_location_assignment PIN_59 -to main_output_tube[5]
+set_location_assignment PIN_52 -to main_output_tube[0]
+set_location_assignment PIN_53 -to main_output_tube[1]
+set_location_assignment PIN_55 -to main_output_tube[2]
+set_location_assignment PIN_57 -to main_output_tube[3]
+set_location_assignment PIN_58 -to main_output_tube[4]
+set_location_assignment PIN_22 -to main_outputC[7]
+set_location_assignment PIN_21 -to main_outputC[6]
+set_location_assignment PIN_16 -to main_outputC[5]
+set_location_assignment PIN_15 -to main_outputC[4]
+set_location_assignment PIN_14 -to main_outputC[3]
+set_location_assignment PIN_13 -to main_outputC[2]
+set_location_assignment PIN_12 -to main_outputC[1]
+set_location_assignment PIN_11 -to main_outputC[0]
+set_location_assignment PIN_1 -to main_outputR[7]
+set_location_assignment PIN_2 -to main_outputR[6]
+set_location_assignment PIN_3 -to main_outputR[5]
+set_location_assignment PIN_4 -to main_outputR[4]
+set_location_assignment PIN_5 -to main_outputR[3]
+set_location_assignment PIN_6 -to main_outputR[2]
+set_location_assignment PIN_7 -to main_outputR[1]
+set_location_assignment PIN_8 -to main_outputR[0]
+set_location_assignment PIN_124 -to main_reset
+set_location_assignment PIN_125 -to main_SW7
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name MISC_FILE "C:/Documents and Settings/admin/×ÀÃæ/ActionTestGame/ActionTestGame.dpf"
+set_global_assignment -name VHDL_FILE random_direction.vhd
+set_global_assignment -name VHDL_FILE game_core.vhd
+set_global_assignment -name VHDL_FILE buttton_scan.vhd
+set_location_assignment PIN_111 -to main_kbrow0
+set_location_assignment PIN_112 -to main_kbrow1
+set_location_assignment PIN_113 -to main_kbrow2
+set_location_assignment PIN_114 -to main_kbrow3
+set_location_assignment PIN_80 -to main_state1_state
+set_location_assignment PIN_73 -to main_output_state[0]
+set_location_assignment PIN_74 -to main_output_state[1]
+set_location_assignment PIN_75 -to main_output_state[2]
+set_location_assignment PIN_76 -to main_output_state[3]
+set_location_assignment PIN_77 -to main_output_state[4]
+set_location_assignment PIN_78 -to main_output_state[5]
+set_global_assignment -name MISC_FILE "F:/ÎÄµµ/Quartus II/ActionTestGame/ActionTestGame.dpf"
+set_location_assignment PIN_117 -to main_keyborad_col[0]
+set_location_assignment PIN_118 -to main_keyborad_col[1]
+set_location_assignment PIN_119 -to main_keyborad_col[2]
+set_location_assignment PIN_120 -to main_keyborad_col[3]
+set_global_assignment -name VHDL_FILE beep.vhd

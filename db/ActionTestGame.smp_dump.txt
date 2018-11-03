@@ -1,0 +1,6 @@
+
+State Machine - |ActionTestGame|tube_display:p4|current_state1
+Name current_state1.st2 current_state1.st0 current_state1.st1 
+current_state1.st1 0 0 0 
+current_state1.st0 0 1 1 
+current_state1.st2 1 0 1 
