@@ -7,7 +7,7 @@ use ieee.std_logic_unsigned.all;
 entity beep is
 	port(
 		clk : in std_logic;
-		sel : in std_logic;
+		state : in std_logic_vector(5 downto 0);
 		device : out std_logic
 		);
 end entity beep;
@@ -20,7 +20,7 @@ signal tmp : integer  range 0 to 124999;-- for the 4hz div
 signal tmp2 : integer range 0 to 2048;--for the div tone
 signal music_sec : integer range 0 to 30 := 0;
 signal music_clk : std_logic;--final output frequency
-signal bool_play : std_logic;
+signal bool_play : std_logic := '0';
 begin
 
 div_4 : process(clk)
@@ -64,9 +64,9 @@ begin
 
 end process search;
 
-xin_baodao : process(sel,clk4)
+xin_baodao : process(state,clk4)
 begin
-	if sel = '1' then
+	if state = "000010" and bool_play = '0' then
 		bool_play <= '1';
 	else
 		if clk4'event and clk4 = '1' then

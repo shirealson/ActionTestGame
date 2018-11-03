@@ -154,6 +154,7 @@ begin
 				end if;
 		elsif state = "000100" then--game period
 					--initialize timer
+				j <= 0;
 				if game_sec < 132 then--the whole game period : 13.8s a game period : lock 0.1s |light 0.5s|off 0.2s| unlock 0.1s
 					game_sec <= game_sec + 1;
 				end if;

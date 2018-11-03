@@ -127,7 +127,7 @@ VCCINT                       : 56        : power  :                   : 2.5V/3.3
 main_output_tube[3]          : 57        : output : 3.3-V LVTTL       :         : 4         : Y              
 main_output_tube[4]          : 58        : output : 3.3-V LVTTL       :         : 4         : Y              
 main_output_tube[5]          : 59        : output : 3.3-V LVTTL       :         : 4         : Y              
-GND*                         : 60        :        :                   :         : 4         :                
+main_beep                    : 60        : output : 3.3-V LVTTL       :         : 4         : Y              
 main_BTN0                    : 61        : input  : 3.3-V LVTTL       :         : 4         : Y              
 main_output_tube[6]          : 62        : output : 3.3-V LVTTL       :         : 4         : Y              
 main_output_index[0]         : 63        : output : 3.3-V LVTTL       :         : 4         : Y              
@@ -178,10 +178,10 @@ GND*                         : 107       :        :                   :         
 GND*                         : 108       :        :                   :         : 3         :                
 GND*                         : 109       :        :                   :         : 2         :                
 GND*                         : 110       :        :                   :         : 2         :                
-main_kbrow0                  : 111       : input  : 3.3-V LVTTL       :         : 2         : Y              
-main_kbrow1                  : 112       : input  : 3.3-V LVTTL       :         : 2         : Y              
-main_kbrow2                  : 113       : input  : 3.3-V LVTTL       :         : 2         : Y              
-main_kbrow3                  : 114       : input  : 3.3-V LVTTL       :         : 2         : Y              
+main_kbrow[0]                : 111       : input  : 3.3-V LVTTL       :         : 2         : Y              
+main_kbrow[1]                : 112       : input  : 3.3-V LVTTL       :         : 2         : Y              
+main_kbrow[2]                : 113       : input  : 3.3-V LVTTL       :         : 2         : Y              
+main_kbrow[3]                : 114       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GNDIO                        : 115       : gnd    :                   :         :           :                
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 main_keyborad_col[0]         : 117       : output : 3.3-V LVTTL       :         : 2         : Y              

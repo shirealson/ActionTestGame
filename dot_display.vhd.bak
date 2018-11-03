@@ -53,7 +53,7 @@ begin
 				end if;
 			
 		elsif state = "000100" then
-			
+				j <= 0;--reset for next self_check
 					--initialize timer
 				if game_sec < 132 then--the whole game period : 13.8s a game period : lock 0.1s |light 0.5s|off 0.2s| unlock 0.1s
 					game_sec <= game_sec + 1;

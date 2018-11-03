@@ -9,10 +9,25 @@ end random_direction;
 
 architecture a of random_direction is
 	signal temp_num : integer range 0 to 3;
+	signal clk3 : std_logic;
+	signal tmp3 : integer range 0 to 3;
+	
 begin
 process (dclk)
 begin
 	if dclk'event and dclk = '1' then
+		if tmp3 = 3 then
+			tmp3 <= 0;
+			clk3 <= not clk3;
+		else
+			tmp3 <= tmp3 + 1;
+		end if;
+	end if;
+end process;
+
+process (clk3)
+begin
+	if clk3'event and clk3 = '1' then
 		if temp_num = 3 then
 			temp_num <= 0;
 		else

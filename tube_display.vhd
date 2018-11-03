@@ -159,7 +159,7 @@ begin
 					game_sec <= game_sec + 1;
 				end if;
 					--count down
-				if game_sec > 28 and game_sec <= 132 then --while playing
+				if game_sec > 21 and game_sec <= 132 then --while playing
 					game_state <= 1;--light
 				else
 					game_state <= 0;

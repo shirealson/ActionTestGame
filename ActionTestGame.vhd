@@ -5,9 +5,9 @@ ENTITY ActionTestGame IS
 	PORT(
 	main_clk,main_reset: in std_logic;
 	main_SW7,main_BTN0 : in std_logic;
-	main_kbrow0,main_kbrow1,main_kbrow2,main_kbrow3:IN STD_LOGIC;--keyboard input
-	main_keyborad_col : out std_logic_vector(3 downto 0) := "0111";
-	
+	main_kbrow:IN STD_LOGIC_VECTOR(3 downto 0);--keyboard input
+	main_keyborad_col : out std_logic_vector(3 downto 0) := "0000";
+	main_beep : out std_logic;
 	main_output_state : out std_logic_vector(5 downto 0);
 	main_outputR : out std_logic_vector(7 downto 0);--decide dot's row
 	main_outputC : out std_logic_vector(7 downto 0);--decide dot's col
@@ -67,8 +67,8 @@ signal main_keyboard_input : std_logic_vector(3 downto 0);
 	
 	component button_scan
 		PORT(
-			clk:IN STD_LOGIC;
-			kbrow0,kbrow1,kbrow2,kbrow3:IN STD_LOGIC;
+			game_clk:IN STD_LOGIC;
+			kbrow:IN STD_LOGIC_VECTOR(3 downto 0);
 			button_output : out std_logic_vector(3 downto 0)
 			);
 	end component;
@@ -78,6 +78,14 @@ signal main_keyboard_input : std_logic_vector(3 downto 0);
 		 dclear: in std_logic;
 		 clk_10 : out std_logic;
 		 clk_1000 : out std_logic);
+	end component;
+	
+	component beep
+		port(
+		clk : in std_logic;
+		state : in std_logic_vector(5 downto 0);
+		device : out std_logic
+		);
 	end component;
 	
 
@@ -94,10 +102,11 @@ p4 : tube_display port map(clk=>main_clk,timer_clk=>main_timer_clk,clear=>main_r
 						output_tube=>main_output_tube,output_index=>main_output_index);
 p5 : random_direction port map(dclk=>main_clk,direction=>main_direction);
 
-p6 : button_scan port map(clk=>main_clk,
-						kbrow0=>main_kbrow0,kbrow1=>main_kbrow1,kbrow2=>main_kbrow2,kbrow3=>main_kbrow3,
+p6 : button_scan port map(game_clk=>main_game_clk,
+						kbrow=>main_kbrow,
 						button_output => main_keyboard_input);
 p7 : div_10hz port map(dclk=>main_clk,dclear=>main_reset,clk_10 => main_timer_clk,clk_1000 => main_game_clk);
+p8 : beep port map(clk=>main_clk,state=>main_state,device=>main_beep);
 main_output_state <= main_state;						
 ----connect every component
 end a;

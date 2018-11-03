@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ActionTestGame
-Sat Nov 03 13:01:39 2018
+Sat Nov 03 20:49:20 2018
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -44,13 +44,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Nov 03 13:01:39 2018    ;
+; Analysis & Synthesis Status ; Successful - Sat Nov 03 20:49:20 2018    ;
 ; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name               ; ActionTestGame                           ;
 ; Top-level Entity Name       ; ActionTestGame                           ;
 ; Family                      ; MAX II                                   ;
-; Total logic elements        ; 884                                      ;
-; Total pins                  ; 49                                       ;
+; Total logic elements        ; 895                                      ;
+; Total pins                  ; 50                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
 +-----------------------------+------------------------------------------+
@@ -125,24 +125,25 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
-; div_10hz.vhd                     ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/div_10hz.vhd                                ;
-; dot_display.vhd                  ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/dot_display.vhd                             ;
-; tube_display.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/tube_display.vhd                            ;
-; state_core.vhd                   ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/state_core.vhd                              ;
-; ActionTestGame.vhd               ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/ActionTestGame.vhd                          ;
-; random_direction.vhd             ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/random_direction.vhd                        ;
-; game_core.vhd                    ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/game_core.vhd                               ;
-; buttton_scan.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame/buttton_scan.vhd                            ;
+; div_10hz.vhd                     ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/div_10hz.vhd                               ;
+; dot_display.vhd                  ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/dot_display.vhd                            ;
+; tube_display.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/tube_display.vhd                           ;
+; state_core.vhd                   ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/state_core.vhd                             ;
+; ActionTestGame.vhd               ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/ActionTestGame.vhd                         ;
+; random_direction.vhd             ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/random_direction.vhd                       ;
+; game_core.vhd                    ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/game_core.vhd                              ;
+; buttton_scan.vhd                 ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/buttton_scan.vhd                           ;
+; beep.vhd                         ; yes             ; User VHDL File               ; F:/文档/Quartus II/ActionTestGame3/beep.vhd                                   ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/lpm_divide.tdf      ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/abs_divider.inc     ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/sign_div_unsign.inc ;
 ; aglobal90.inc                    ; yes             ; Megafunction                 ; d:/program files/quartus9/quartus/libraries/megafunctions/aglobal90.inc       ;
-; db/lpm_divide_61m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/lpm_divide_61m.tdf                       ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/sign_div_unsign_nlh.tdf                  ;
-; db/alt_u_div_9le.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/alt_u_div_9le.tdf                        ;
-; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_e7c.tdf                          ;
-; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_f7c.tdf                          ;
-; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame/db/add_sub_g7c.tdf                          ;
+; db/lpm_divide_61m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/lpm_divide_61m.tdf                      ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/sign_div_unsign_nlh.tdf                 ;
+; db/alt_u_div_9le.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/alt_u_div_9le.tdf                       ;
+; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/add_sub_e7c.tdf                         ;
+; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/add_sub_f7c.tdf                         ;
+; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/文档/Quartus II/ActionTestGame3/db/add_sub_g7c.tdf                         ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+
 
 
@@ -151,33 +152,33 @@ applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Total logic elements                        ; 884      ;
-;     -- Combinational with no register       ; 592      ;
-;     -- Register only                        ; 57       ;
-;     -- Combinational with a register        ; 235      ;
+; Total logic elements                        ; 895      ;
+;     -- Combinational with no register       ; 609      ;
+;     -- Register only                        ; 55       ;
+;     -- Combinational with a register        ; 231      ;
 ;                                             ;          ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 318      ;
-;     -- 3 input functions                    ; 193      ;
-;     -- 2 input functions                    ; 259      ;
-;     -- 1 input functions                    ; 57       ;
+;     -- 4 input functions                    ; 382      ;
+;     -- 3 input functions                    ; 167      ;
+;     -- 2 input functions                    ; 239      ;
+;     -- 1 input functions                    ; 52       ;
 ;     -- 0 input functions                    ; 0        ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 650      ;
-;     -- arithmetic mode                      ; 234      ;
+;     -- normal mode                          ; 676      ;
+;     -- arithmetic mode                      ; 219      ;
 ;     -- qfbk mode                            ; 0        ;
 ;     -- register cascade mode                ; 0        ;
-;     -- synchronous clear/load mode          ; 112      ;
-;     -- asynchronous clear/load mode         ; 26       ;
+;     -- synchronous clear/load mode          ; 100      ;
+;     -- asynchronous clear/load mode         ; 27       ;
 ;                                             ;          ;
-; Total registers                             ; 292      ;
-; Total logic cells in carry chains           ; 283      ;
-; I/O pins                                    ; 49       ;
+; Total registers                             ; 286      ;
+; Total logic cells in carry chains           ; 265      ;
+; I/O pins                                    ; 50       ;
 ; Maximum fan-out node                        ; main_clk ;
-; Maximum fan-out                             ; 132      ;
-; Total fan-out                               ; 3171     ;
-; Average fan-out                             ; 3.40     ;
+; Maximum fan-out                             ; 138      ;
+; Total fan-out                               ; 3279     ;
+; Average fan-out                             ; 3.47     ;
 +---------------------------------------------+----------+
 
 
@@ -186,11 +187,12 @@ applicable agreement for further details.
 +--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                 ; Library Name ;
 +--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |ActionTestGame                            ; 884 (0)     ; 292          ; 0          ; 49   ; 0            ; 592 (0)      ; 57 (0)            ; 235 (0)          ; 283 (0)         ; 0 (0)      ; |ActionTestGame                                                                                                                                     ; work         ;
-;    |button_scan:p6|                        ; 110 (110)   ; 60           ; 0          ; 0    ; 0            ; 50 (50)      ; 14 (14)           ; 46 (46)          ; 51 (51)         ; 0 (0)      ; |ActionTestGame|button_scan:p6                                                                                                                      ; work         ;
+; |ActionTestGame                            ; 895 (0)     ; 286          ; 0          ; 50   ; 0            ; 609 (0)      ; 55 (0)            ; 231 (0)          ; 265 (0)         ; 0 (0)      ; |ActionTestGame                                                                                                                                     ; work         ;
+;    |beep:p8|                               ; 113 (113)   ; 41           ; 0          ; 0    ; 0            ; 72 (72)      ; 9 (9)             ; 32 (32)          ; 33 (33)         ; 0 (0)      ; |ActionTestGame|beep:p8                                                                                                                             ; work         ;
+;    |button_scan:p6|                        ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|button_scan:p6                                                                                                                      ; work         ;
 ;    |div_10hz:p7|                           ; 57 (57)     ; 25           ; 0          ; 0    ; 0            ; 32 (32)      ; 11 (11)           ; 14 (14)          ; 24 (24)         ; 0 (0)      ; |ActionTestGame|div_10hz:p7                                                                                                                         ; work         ;
-;    |dot_display:p3|                        ; 106 (106)   ; 6            ; 0          ; 0    ; 0            ; 100 (100)    ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|dot_display:p3                                                                                                                      ; work         ;
-;    |game_core:p1|                          ; 340 (242)   ; 85           ; 0          ; 0    ; 0            ; 255 (157)    ; 1 (1)             ; 84 (84)          ; 119 (59)        ; 0 (0)      ; |ActionTestGame|game_core:p1                                                                                                                        ; work         ;
+;    |dot_display:p3|                        ; 107 (107)   ; 6            ; 0          ; 0    ; 0            ; 101 (101)    ; 0 (0)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|dot_display:p3                                                                                                                      ; work         ;
+;    |game_core:p1|                          ; 341 (243)   ; 92           ; 0          ; 0    ; 0            ; 249 (151)    ; 5 (5)             ; 87 (87)          ; 119 (59)        ; 0 (0)      ; |ActionTestGame|game_core:p1                                                                                                                        ; work         ;
 ;       |lpm_divide:Div0|                    ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0                                                                                                        ; work         ;
 ;          |lpm_divide_61m:auto_generated|   ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated                                                                          ; work         ;
 ;             |sign_div_unsign_nlh:divider|  ; 98 (0)      ; 0            ; 0          ; 0    ; 0            ; 98 (0)       ; 0 (0)             ; 0 (0)            ; 60 (0)          ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider                                              ; work         ;
@@ -207,7 +209,7 @@ applicable agreement for further details.
 ;                   |add_sub_g7c:add_sub_7|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_7  ; work         ;
 ;                   |add_sub_g7c:add_sub_8|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_8  ; work         ;
 ;                   |add_sub_g7c:add_sub_9|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ActionTestGame|game_core:p1|lpm_divide:Div0|lpm_divide_61m:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_9le:divider|add_sub_g7c:add_sub_9  ; work         ;
-;    |random_direction:p5|                   ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|random_direction:p5                                                                                                                 ; work         ;
+;    |random_direction:p5|                   ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |ActionTestGame|random_direction:p5                                                                                                                 ; work         ;
 ;    |state_core:p2|                         ; 37 (37)     ; 19           ; 0          ; 0    ; 0            ; 18 (18)      ; 4 (4)             ; 15 (15)          ; 13 (13)         ; 0 (0)      ; |ActionTestGame|state_core:p2                                                                                                                       ; work         ;
 ;    |tube_display:p4|                       ; 233 (233)   ; 96           ; 0          ; 0    ; 0            ; 137 (137)    ; 26 (26)           ; 70 (70)          ; 76 (76)         ; 0 (0)      ; |ActionTestGame|tube_display:p4                                                                                                                     ; work         ;
 +--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -252,39 +254,38 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; tube_display:p4|score_sec[0..2]        ; Lost fanout                                 ;
-; dot_display:p3|i[2]                    ; Merged with tube_display:p4|i[2]            ;
-; dot_display:p3|i[1]                    ; Merged with tube_display:p4|i[1]            ;
-; dot_display:p3|i[0]                    ; Merged with tube_display:p4|i[0]            ;
-; dot_display:p3|score_state             ; Merged with tube_display:p4|score_state     ;
-; dot_display:p3|game_sec[0]             ; Merged with tube_display:p4|game_sec[0]     ;
-; dot_display:p3|game_sec[1]             ; Merged with tube_display:p4|game_sec[1]     ;
-; dot_display:p3|game_sec[2]             ; Merged with tube_display:p4|game_sec[2]     ;
-; dot_display:p3|game_sec[3]             ; Merged with tube_display:p4|game_sec[3]     ;
-; dot_display:p3|game_sec[4]             ; Merged with tube_display:p4|game_sec[4]     ;
-; dot_display:p3|game_sec[5]             ; Merged with tube_display:p4|game_sec[5]     ;
-; dot_display:p3|game_sec[6]             ; Merged with tube_display:p4|game_sec[6]     ;
-; dot_display:p3|game_sec[7]             ; Merged with tube_display:p4|game_sec[7]     ;
-; dot_display:p3|j[0]                    ; Merged with tube_display:p4|j[0]            ;
-; dot_display:p3|j[1]                    ; Merged with tube_display:p4|j[1]            ;
-; dot_display:p3|j[2]                    ; Merged with tube_display:p4|j[2]            ;
-; dot_display:p3|j[3]                    ; Merged with tube_display:p4|j[3]            ;
-; dot_display:p3|j[4]                    ; Merged with tube_display:p4|j[4]            ;
-; dot_display:p3|j[5]                    ; Merged with tube_display:p4|j[5]            ;
-; random_direction:p5|temp_num[0]        ; Merged with tube_display:p4|i[0]            ;
-; button_scan:p6|clk3[0]                 ; Merged with tube_display:p4|i[0]            ;
-; button_scan:p6|clk1[0]                 ; Merged with tube_display:p4|i[0]            ;
-; div_10hz:p7|tmp2[0]                    ; Merged with div_10hz:p7|tmp[0]              ;
-; button_scan:p6|clk1[1]                 ; Merged with random_direction:p5|temp_num[1] ;
-; div_10hz:p7|tmp2[1]                    ; Merged with div_10hz:p7|tmp[1]              ;
-; dot_display:p3|state1_state            ; Merged with tube_display:p4|state1_state    ;
-; Total Number of Removed Registers = 28 ;                                             ;
-+----------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++----------------------------------------+------------------------------------------+
+; Register name                          ; Reason for Removal                       ;
++----------------------------------------+------------------------------------------+
+; tube_display:p4|score_sec[0..2]        ; Lost fanout                              ;
+; dot_display:p3|i[2]                    ; Merged with tube_display:p4|i[2]         ;
+; dot_display:p3|i[1]                    ; Merged with tube_display:p4|i[1]         ;
+; dot_display:p3|i[0]                    ; Merged with tube_display:p4|i[0]         ;
+; dot_display:p3|score_state             ; Merged with tube_display:p4|score_state  ;
+; dot_display:p3|game_sec[0]             ; Merged with tube_display:p4|game_sec[0]  ;
+; dot_display:p3|game_sec[1]             ; Merged with tube_display:p4|game_sec[1]  ;
+; dot_display:p3|game_sec[2]             ; Merged with tube_display:p4|game_sec[2]  ;
+; dot_display:p3|game_sec[3]             ; Merged with tube_display:p4|game_sec[3]  ;
+; dot_display:p3|game_sec[4]             ; Merged with tube_display:p4|game_sec[4]  ;
+; dot_display:p3|game_sec[5]             ; Merged with tube_display:p4|game_sec[5]  ;
+; dot_display:p3|game_sec[6]             ; Merged with tube_display:p4|game_sec[6]  ;
+; dot_display:p3|game_sec[7]             ; Merged with tube_display:p4|game_sec[7]  ;
+; dot_display:p3|j[0]                    ; Merged with tube_display:p4|j[0]         ;
+; dot_display:p3|j[1]                    ; Merged with tube_display:p4|j[1]         ;
+; dot_display:p3|j[2]                    ; Merged with tube_display:p4|j[2]         ;
+; dot_display:p3|j[3]                    ; Merged with tube_display:p4|j[3]         ;
+; dot_display:p3|j[4]                    ; Merged with tube_display:p4|j[4]         ;
+; dot_display:p3|j[5]                    ; Merged with tube_display:p4|j[5]         ;
+; random_direction:p5|tmp3[0]            ; Merged with tube_display:p4|i[0]         ;
+; beep:p8|tmp[0]                         ; Merged with tube_display:p4|i[0]         ;
+; div_10hz:p7|tmp2[0]                    ; Merged with div_10hz:p7|tmp[0]           ;
+; div_10hz:p7|tmp2[1]                    ; Merged with div_10hz:p7|tmp[1]           ;
+; random_direction:p5|tmp3[1]            ; Merged with beep:p8|tmp[1]               ;
+; dot_display:p3|state1_state            ; Merged with tube_display:p4|state1_state ;
+; Total Number of Removed Registers = 27 ;                                          ;
++----------------------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -292,12 +293,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 292   ;
-; Number of registers using Synchronous Clear  ; 98    ;
-; Number of registers using Synchronous Load   ; 14    ;
+; Total registers                              ; 286   ;
+; Number of registers using Synchronous Clear  ; 87    ;
+; Number of registers using Synchronous Load   ; 13    ;
 ; Number of registers using Asynchronous Clear ; 26    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 207   ;
+; Number of registers using Asynchronous Load  ; 1     ;
+; Number of registers using Clock Enable       ; 201   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -307,32 +308,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d1[0]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d1[3]             ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|game_sec[6]       ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|j[2]              ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY1:count1[4]    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY2:count1[0]    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY3:count1[2]    ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ActionTestGame|button_scan:p6|\KEY4:count1[3]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d2[2]             ;
-; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score1[9]            ;
-; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score3[1]            ;
-; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score2[10]           ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d3[2]             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|j[3]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d2[1]             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|d3[1]             ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |ActionTestGame|tube_display:p4|state1_state      ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|d4[3]             ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|state_core:p2|nx_state[2]         ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|reg[11]           ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|direction[3]         ;
-; 9:1                ; 13 bits   ; 78 LEs        ; 13 LEs               ; 65 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|timer[9]             ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score1[8]            ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score3[6]            ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|score2[0]            ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|d4[2]             ;
+; 32:1               ; 5 bits    ; 105 LEs       ; 60 LEs               ; 45 LEs                 ; Yes        ; |ActionTestGame|beep:p8|tone[2]                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |ActionTestGame|state_core:p2|nx_state[1]         ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |ActionTestGame|tube_display:p4|reg[7]            ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|direction[2]         ;
+; 9:1                ; 14 bits   ; 84 LEs        ; 14 LEs               ; 70 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|timer[2]             ;
 ; 10:1               ; 13 bits   ; 78 LEs        ; 39 LEs               ; 39 LEs                 ; Yes        ; |ActionTestGame|game_core:p1|tube_number[12]      ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempR[1]~15        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[1]~45        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[2]~49        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ActionTestGame|tube_display:p4|current_state1~16 ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempR[3]~19        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[6]~65        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[5]~61        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |ActionTestGame|tube_display:p4|current_state1~17 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempR[0]~0         ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[4]~57        ;
 ; 13:1               ; 7 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |ActionTestGame|tube_display:p4|output_tube[6]    ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; No         ; |ActionTestGame|dot_display:p3|tempC[3]~53        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -365,7 +363,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sat Nov 03 13:01:34 2018
+    Info: Processing started: Sat Nov 03 20:49:16 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ActionTestGame -c ActionTestGame
 Info: Found 2 design units, including 1 entities, in source file score_recorder.vhd
     Info: Found design unit 1: score_recorder-D
@@ -401,6 +399,8 @@ Info: Found 2 design units, including 1 entities, in source file beep.vhd
 Info: Elaborating entity "ActionTestGame" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at ActionTestGame.vhd(9): used explicit default value for signal "main_keyborad_col" because signal was never assigned a value
 Info: Elaborating entity "game_core" for hierarchy "game_core:p1"
+Warning (10036): Verilog HDL or VHDL warning at game_core.vhd(18): object "direction_lock" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at game_core.vhd(130): signal "game_clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "state_core" for hierarchy "state_core:p2"
 Info: Elaborating entity "dot_display" for hierarchy "dot_display:p3"
 Warning (10492): VHDL Process Statement warning at dot_display.vhd(131): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -458,6 +458,8 @@ Warning (10492): VHDL Process Statement warning at tube_display.vhd(287): signal
 Info: Elaborating entity "random_direction" for hierarchy "random_direction:p5"
 Info: Elaborating entity "button_scan" for hierarchy "button_scan:p6"
 Info: Elaborating entity "div_10hz" for hierarchy "div_10hz:p7"
+Info: Elaborating entity "beep" for hierarchy "beep:p8"
+Warning (10492): VHDL Process Statement warning at beep.vhd(69): signal "bool_play" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Inferred 1 megafunctions from design logic
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game_core:p1|Div0"
 Info: Elaborated megafunction instantiation "game_core:p1|lpm_divide:Div0"
@@ -512,10 +514,10 @@ Warning: Latch dot_display:p3|tempC[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
     Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
 Warning: Latch dot_display:p3|tempC[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
     Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
 Warning: Latch dot_display:p3|tempC[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
     Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
 Warning: Latch dot_display:p3|tempC[5] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal state_core:p2|pre_state[0]
@@ -527,24 +529,22 @@ Warning: Latch dot_display:p3|tempC[7] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal dot_display:p3|game_state[2]
     Warning: Ports ENA and CLR on the latch are fed by the same signal state_core:p2|pre_state[0]
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "main_keyborad_col[0]" is stuck at VCC
-    Warning (13410): Pin "main_keyborad_col[1]" is stuck at VCC
-    Warning (13410): Pin "main_keyborad_col[2]" is stuck at VCC
+    Warning (13410): Pin "main_keyborad_col[0]" is stuck at GND
+    Warning (13410): Pin "main_keyborad_col[1]" is stuck at GND
+    Warning (13410): Pin "main_keyborad_col[2]" is stuck at GND
     Warning (13410): Pin "main_keyborad_col[3]" is stuck at GND
 Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
     Info: Register "tube_display:p4|score_sec[1]" lost all its fanouts during netlist optimizations.
     Info: Register "tube_display:p4|score_sec[0]" lost all its fanouts during netlist optimizations.
     Info: Register "tube_display:p4|score_sec[2]" lost all its fanouts during netlist optimizations.
-Warning: Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "main_kbrow0"
-Info: Implemented 933 device resources after synthesis - the final resource count might be different
+Info: Implemented 945 device resources after synthesis - the final resource count might be different
     Info: Implemented 8 input pins
-    Info: Implemented 41 output pins
-    Info: Implemented 884 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Implemented 42 output pins
+    Info: Implemented 895 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 93 warnings
     Info: Peak virtual memory: 271 megabytes
-    Info: Processing ended: Sat Nov 03 13:01:39 2018
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Sat Nov 03 20:49:20 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

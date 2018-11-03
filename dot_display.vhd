@@ -228,7 +228,7 @@ begin
 						when 3 => tempC <= "00001001";tempR<="11110111";
 						when 2 => tempC <= "11111001";tempR<="11111011";
 						when 1 => tempC <= "10000001";tempR<="11111101";
-						when 0 => tempC <= "11100111";tempR<="11111110";
+						when 0 => tempC <= "11111111";tempR<="11111110";
 						when others => i<=0;
 					end case;
 				elsif direction = "0001" then --right

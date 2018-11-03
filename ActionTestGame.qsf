@@ -99,11 +99,6 @@ set_global_assignment -name MISC_FILE "C:/Documents and Settings/admin/×ÀÃæ/Acti
 set_global_assignment -name VHDL_FILE random_direction.vhd
 set_global_assignment -name VHDL_FILE game_core.vhd
 set_global_assignment -name VHDL_FILE buttton_scan.vhd
-set_location_assignment PIN_111 -to main_kbrow0
-set_location_assignment PIN_112 -to main_kbrow1
-set_location_assignment PIN_113 -to main_kbrow2
-set_location_assignment PIN_114 -to main_kbrow3
-set_location_assignment PIN_80 -to main_state1_state
 set_location_assignment PIN_73 -to main_output_state[0]
 set_location_assignment PIN_74 -to main_output_state[1]
 set_location_assignment PIN_75 -to main_output_state[2]
@@ -116,3 +111,10 @@ set_location_assignment PIN_118 -to main_keyborad_col[1]
 set_location_assignment PIN_119 -to main_keyborad_col[2]
 set_location_assignment PIN_120 -to main_keyborad_col[3]
 set_global_assignment -name VHDL_FILE beep.vhd
+set_location_assignment PIN_60 -to main_beep
+set_global_assignment -name MISC_FILE "C:/Documents and Settings/admin/×ÀÃæ/ActionTestGame2/ActionTestGame.dpf"
+set_location_assignment PIN_114 -to main_kbrow[3]
+set_location_assignment PIN_113 -to main_kbrow[2]
+set_location_assignment PIN_112 -to main_kbrow[1]
+set_location_assignment PIN_111 -to main_kbrow[0]
+set_global_assignment -name MISC_FILE "F:/ÎÄµµ/Quartus II/ActionTestGame3/ActionTestGame.dpf"

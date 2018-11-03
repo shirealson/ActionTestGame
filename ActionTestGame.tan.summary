@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.159 ns
+Actual Time    : 2.068 ns
 From           : main_reset
-To             : div_10hz:p7|clktmp1
+To             : div_10hz:p7|clktmp2
 From Clock     : --
 To Clock       : main_clk
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 22.011 ns
-From           : dot_display:p3|tempR[2]
-To             : main_outputR[2]
+Actual Time    : 25.076 ns
+From           : dot_display:p3|tempR[0]
+To             : main_outputR[0]
 From Clock     : main_clk
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.824 ns
-From           : main_BTN0
-To             : state_core:p2|nx_state[0]
+Actual Time    : 4.055 ns
+From           : main_reset
+To             : state_core:p2|game_sec[5]
 From Clock     : --
 To Clock       : main_clk
 Failed Paths   : 0
@@ -35,8 +35,8 @@ Failed Paths   : 0
 Type           : Clock Setup: 'main_clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.50 MHz ( period = 68.954 ns )
-From           : game_core:p1|score2[1]
+Actual Time    : 14.09 MHz ( period = 70.973 ns )
+From           : game_core:p1|score1[2]
 To             : game_core:p1|tube_number[0]
 From Clock     : main_clk
 To Clock       : main_clk
@@ -50,7 +50,7 @@ From           : tube_display:p4|i[2]
 To             : dot_display:p3|tempR[2]
 From Clock     : main_clk
 To Clock       : main_clk
-Failed Paths   : 186
+Failed Paths   : 257
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 186
+Failed Paths   : 257
 
 --------------------------------------------------------------------------------------
 
