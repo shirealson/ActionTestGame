@@ -66,7 +66,7 @@ end process search;
 
 xin_baodao : process(state,clk4)
 begin
-	if state = "000010" and bool_play = '0' then
+	if state = "000001" and bool_play = '0' then
 		bool_play <= '1';
 	else
 		if clk4'event and clk4 = '1' then
