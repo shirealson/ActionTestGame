@@ -41,7 +41,7 @@ if game_clk'event and game_clk = '1' then
 			input_button <= button;
 			if input_button = "0000" and continue_game = '1' then-- if the button no pressed and you can continue
 				timer <= timer + 1;
-				tube_number <= timer;
+				
 				
 			elsif continue_game = '1' and not(input_button = "0000") then
 				
@@ -66,7 +66,7 @@ if game_clk'event and game_clk = '1' then
 			input_button <= button;
 			if input_button = "0000" and continue_game = '1' then-- if the button no pressed and you can continue
 				timer <= timer + 1;
-				tube_number <= timer;
+				
 				
 			elsif continue_game = '1' and not(input_button = "0000") then
 				if input_button = direction then
@@ -90,7 +90,7 @@ if game_clk'event and game_clk = '1' then
 			input_button <= button;
 			if input_button = "0000" and continue_game = '1' then-- if the button no pressed and you can continue
 				timer <= timer + 1;
-				tube_number <= timer;
+				
 				
 			elsif continue_game = '1' and not(input_button = "0000") then
 				if input_button = direction then
